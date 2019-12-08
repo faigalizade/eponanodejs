@@ -18,7 +18,12 @@ html {
     /* padding: 0 10%; */
     height: 100%;
 }
-
+a {
+    text-decoration: none;
+}
+li {
+    list-style-type: none;
+}
 .wrapper {
     height: 100%;
     display: flex;
@@ -44,7 +49,6 @@ header {
     /* z-index: 1; */
 }
 
-header .search_icon {}
 
 header .profile_icon {
     float: right;
@@ -77,30 +81,45 @@ footer {
     opacity: 1;
 } */
 /* img:hover{opacity: .4;transition: 600ms all;} */
-menu {
-    width: 100%;
-    margin-top: 5%;
-}
 
 menu li {
-
     font-family: 'Raleway', sans-serif;
     display: inline;
     list-style: none;
     padding: 3% 4%;
 }
-
-menu li a {
-    color: silver;
-    text-decoration: none;
+.sidebarContentMenu a {
+    color: #bdbdbd;
 }
-
-.leftMenu_item__active a {
+.sidebarContentMenu a:hover{
+    opacity: .4;
+    transition: opacity .7s;
+}
+.sidebarContentMenu{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.sidebarContentMenu_item__active a {
     color: #000;
     border-bottom: 1px solid;
     padding: 2px 0;
 }
-
+.sidebarContentMenu_item__active a:hover{
+    opacity: 1;
+    transition: none;
+}
+.sidebarContentMenu_item__red a{
+    color: #d60000;
+}
+.sidebarContentMenu_item__red a:hover{
+    transition: none;
+    opacity: 1;
+}
+.womenContent{
+    display: flex;
+    justify-content: center;
+}
 .about,
 .sale {
     text-align: left;
@@ -137,26 +156,39 @@ menu li a {
     color: #54a0ff;
 }
 
-#pp {
-    z-index: 2;
-    background-color: white;
-    height: 98%;
-    width: 400px;
-    padding: 1%;
+.sidebarBackground {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 3;
+}
+.sidebarContent{
+    transition: all .8s;
+    z-index: 4;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 1000px;
+    margin-left: -1001px;
+    height: 100%;
+    background-color: #ffffff;
     border-right: 1px solid silver;
 }
 
-#pp ul {
-    display: inline;
+.sidebarContentHeaderLogo{
+    padding: 20px 0 10px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
-
-#pp ul li {
-    list-style: none;
-    font-family: 'Raleway', sans-serif;
-    padding: 6% 0;
-    font-size: 12px;
+.sidebarContentHeaderLogo_img{
+    width: 100px;
+    height: 42px;
 }
-
 .log_button {
     border: solid 1px silver;
     padding: 3% 4%;
@@ -178,8 +210,8 @@ menu li a {
     cursor: pointer;
 }
 
-menu li a:hover {
-    opacity: .1;
+li a:hover {
+    opacity: .5;
     transition: 700ms all;
 }
 
@@ -285,7 +317,8 @@ header .logo {}
 }
 
 #menu {
-    width: 22px
+    width: 22px;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 700px) {
@@ -404,17 +437,22 @@ header .logo {}
     width: 40%;
     text-align: center;
 }
-
-.login_sub {
+.btnPrimary{
     padding: 10px 40px;
-
+    border: solid black 1px;
+    background: white;
+    cursor: pointer;
+}
+.login_sub{
+    padding: 10px 40px;
     border: solid black 1px;
     background: white;
     cursor: pointer;
     margin-top: 5%;
 }
 
-.login_sub:hover {
+.login_sub:hover,
+.btnPrimary:hover {
     transition: 600ms all;
     background: black;
     color: white;

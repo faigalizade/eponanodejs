@@ -8,68 +8,18 @@
     <link rel="stylesheet" href="styles/main.css">
     <title><%= pageTitle %></title>
     <link rel="shortcut icon" href="images/logo e.png" type="image/x-icon">
+    <script   src="https://code.jquery.com/jquery-3.4.1.min.js"   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="   crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="wrapper">
         <div class="content">
-            <div id="pp"
-                style="position: fixed; left: -600px; display: flex;flex-direction: column;text-align: center;align-items: center;">
-                <menu style="display:block;">
-                    <!-- <li><button class="log_button">LOGIN</button></li> -->
-                    <li><a href="/"><img class="logo" src="images/logo.png" width="100" alt=""></a></li>
-                    <!-- <li style="margin-bottom: 0%;"><button  class="log_button">EXIT</button></li> -->
-                </menu>
-
-
-                <menu class='leftMenu' >
-                    <li class="leftMenu_item<%= (page == 'women') ? '__active' : '' %>"><a href="/women">WOMEN</a></li>
-                    <li class="leftMenu_item<%= (page == 'about') ? '__active' : '' %>"><a href='/about' >ABOUT</a></li>
-                    <li class="leftMenu_item<%= (page == 'sale') ? '__active' : '' %>"><a href='/sale'>SALE</a></li>
-                </menu>
-
-                <div style="display: flex; flex-direction: row;text-align: center;justify-content: center; margin-top: 15%;width: 90%;"
-                    class="menu_content">
-                    <ul style="flex: 1;">
-                        <li>New Style</li>
-                        <li>Base Layers</li>
-                        <li>Shorts</li>
-                        <li>Accesiors</li>
-
-                    </ul>
-                    <ul style=" flex: 1;">
-                        <li>New Style</li>
-                        <li>Base Layers</li>
-                        <li>Shorts</li>
-                        <li>Accesiors</li>
-                    </ul>
-                </div>
-
-                <p style="font:sans-serif;margin-top:10%;font-size:10px;color:silver;">FREE US SHIPPING ON ORDERS OVER
-                    $100</p>
-                <p style="font-family: 'Raleway', sans-serif;margin-top:10%;font-size:16px;">COLLECTIONS</p>
-                <menu style="">
-                    <li style="width:30%;"> <img style="flex: 1;" id="img" width="32%" src="images/wallpaper.jpg"
-                            alt=""></li>
-                    <li style="width:30%"><img style="flex: 1;" id="img" width="30%" src="images/wallpaper3.jpg" alt="">
-                    </li>
-                </menu>
-                <menu style="">
-                    <li style="width:30%;"> <img style="flex: 1;" id="img" width="32%" src="images/wallpaper.jpg"
-                            alt=""></li>
-                    <li style="width:30%"><img style="flex: 1;" id="img" width="30%" src="images/wallpaper3.jpg" alt="">
-                    </li>
-                </menu>
-                <!-- <div style="display: flex;flex-direction: row; width: 100%;">
-                                                                <img style="" id="img" width="30%" src="wallpaper2.jpg" alt="">
-                                                                <img style="" id="img" width="30%" src="wallpaper3.jpg" alt="">
-                                                </div> -->
-            </div>
+            <%- include('../blocks/sidebar.ejs')%>
             <div id="epona" onclick="stop()">
                 <header>
                     <!-- <div class="container"> -->
 
-                    <div class="test"><img style="float: left;" onclick="start()" id="menu" class="search_icon"
+                    <div class="test"><img style="float: left;" id="menu" class="search_icon"
                             src="images/menu.png" width="24px" alt=""></div>
                     <a href='/' class="test1"><img class="logo" src="images/logo.png" width="90" alt=""></a>
                     <div class="" style="float:right;flex:1;">

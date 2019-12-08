@@ -26,6 +26,14 @@ app.get('/about', (req,res) => {
         pageTitle: 'About - E P O N A'
     })
 })
+
+app.get('/login', (req,res) => {
+  res.render('login',
+  {
+      pageTitle: 'Log In - E P O N A'
+  })
+})
+
 // ADMIN
 app.get('/admin',(req,res) => {
     if(false){

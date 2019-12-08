@@ -21,10 +21,6 @@ app.get('/about', (req,res) => {
         pageTitle: 'About - E P O N A'
     })
 })
-// Get single  member
-app.get('/api/member/:id',(req,res) => {
-    res.json(members.filter(member => member.id === parseInt(req.params.id)))
-})
 
 // Set static folder
 app.use(express.static(path.join(__dirname, 'public')))
@@ -45,6 +41,4 @@ async function start() {
       console.log(e)
     }
   }
-  
-  
 start()

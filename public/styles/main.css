@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
 * {
     margin: 0;
@@ -147,7 +148,7 @@ header .logo {}
 .test2{float:right;flex:1;}
 
 .center {
-    text-align: center;
+
     padding: 2% 20%;
 }
 
@@ -229,17 +230,58 @@ header .user_icon{float:right;padding:3%;width:16px;}
   }
   /* Page Login */
   .login{
+      display: flex;
+      flex-direction: column;
 
-      width: 100%;
-      justify-content: center;
+      /* justify-content: center; */
       align-items: center;
-      height: 100%;
-  }
-  .login_username{
-      padding: 1% 4% 1% 1%;
-  }
-  .login_password{
-    padding: 1% 4% 1% 1%;
-}
+      margin-bottom: 10%;
 
+  }
+  .login form{
+
+  }
+  .login_username , .login_password{
+      padding: 10px 180px 10px 5px;
+  }
+.login_headtext{
+    text-align: center;
+    margin-top: 2%;
+    font-family: 'Open Sans', sans-serif;
+}
+.login_username_div , .login_paswword_div{
+ width: 30%;
+    
+
+}
+.login_username_text , .login_password_text{
+    margin-bottom: 2%;
+    margin-top:13%;
+        font-size: 12px;
+    font-family: 'Open Sans', sans-serif;
+}
+.login_forgpass{
+    width: 100%;
+    text-decoration: none;
+    font-size:13px;
+    color: gray;
+    font-family: 'Open Sans', sans-serif;
+}
+.log_content{
+    margin-top: 5%;
+    border: solid 1px;
+    padding: 12px 120px 40px 120px;
+}
+.login_sub{
+    padding: 10px 40px;
+
+    border: solid black 1px;
+    background: white;
+    cursor: pointer;
+    margin-top: 5%;
+}
+.login_sub:hover{
+    transition: 600ms all;
+    background: black;
+    color: white;
 }

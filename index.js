@@ -2,12 +2,17 @@ const express = require('express')
 const path = require('path')
 const mongoose = require('mongoose')
 const app = express()
+const PORT = process.env.PORT || 3000
+
 
 //Init middleware
 // app.use(logger)
+
+
 app.set('view engine','ejs')
 app.set('views', path.join(__dirname, '/views'))
-// Get all members
+
+
 app.get('/', (req, res) => {
     res.render('home',
     {
@@ -21,12 +26,17 @@ app.get('/about', (req,res) => {
         pageTitle: 'About - E P O N A'
     })
 })
+// ADMIN
+app.get('/admin',(req,res) => {
+    if(false){
+        res.render('admin/index')
+    }else{
+        res.redirect('/')
+    }
+})
 
-// Set static folder
+
 app.use(express.static(path.join(__dirname, 'public')))
-
-const PORT = process.env.PORT || 3000
-
 
 async function start() {
     try {

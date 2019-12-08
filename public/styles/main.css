@@ -6,6 +6,7 @@
     margin: 0;
     padding: 0;
     z-index: 1;
+    font-family: monospace;
 }
 
 .container {
@@ -84,7 +85,40 @@ menu li a {
     color: silver;
     text-decoration: none;
 }
-
+.leftMenu_item__active a{
+    color: #000;
+    border-bottom: 1px solid;
+    padding: 2px 0;
+}
+.about,
+.sale {
+    text-align: left;
+}
+.pageHeader{
+    font-size: 30px;
+    margin-bottom: 20px;
+    padding: 10px 0;
+    border-bottom: 2px solid;
+}
+.about_contactsHeader{
+    font-size: 15px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+.about_companyName{
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+.about_contacts{
+    margin: 20px 0;
+}
+.about_contacts a{
+    text-decoration: none;
+    color: #54a0ff;
+}
+.about_contacts a:visited{
+    color: #54a0ff;
+}
 #pp {
     z-index: 2;
     background-color: white;

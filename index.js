@@ -15,7 +15,8 @@ app.set('views', path.join(__dirname, '/views'))
 
 app.get('/', (req, res) => {
     res.render('home',
-    {
+    {   
+        page: 'home',
         pageTitle:'E P O N A',
     })
 })
@@ -23,9 +24,11 @@ app.get('/', (req, res) => {
 app.get('/about', (req,res) => {
     res.render('about',
     {
+        page: 'about',
         pageTitle: 'About - E P O N A'
     })
 })
+
 // ADMIN
 app.get('/admin',(req,res) => {
     if(false){

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles/main.css">
-    <title>E P O N A</title>
+    <title><%= pageTitle %></title>
     <style>
 
     </style>
@@ -24,12 +24,12 @@
                 </menu>
 
 
-                <menu>
-                    <li><a href="/" >HOME</a></li>
-                    <li><a href='/about' >ABOUT</a></li>
-                    <li><a href='/world' >WORLD</a></li>
-                    <li><a href='/sale'>SALE</a></li>
+                <menu class='leftMenu' >
+                    <li class="leftMenu_item<%= (page == 'women') ? '__active' : '' %>"><a href="/Women">WOMEN</a></li>
+                    <li class="leftMenu_item<%= (page == 'about') ? '__active' : '' %>"><a href='/about' >ABOUT</a></li>
+                    <li class="leftMenu_item<%= (page == 'sale') ? '__active' : '' %>"><a href='/sale'>SALE</a></li>
                 </menu>
+
                 <div style="display: flex; flex-direction: row;text-align: center;justify-content: center; margin-top: 15%;width: 90%;"
                     class="menu_content">
                     <ul style="flex: 1;">

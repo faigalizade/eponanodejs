@@ -83,7 +83,11 @@ menu li a {
     color: silver;
     text-decoration: none;
 }
-
+.leftMenu_item__active a{
+    color: #000;
+    border-bottom: 1px solid;
+    padding: 2px 0;
+}
 #pp {
     z-index: 2;
     background-color: white;

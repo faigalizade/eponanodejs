@@ -4,5 +4,5 @@ $('#menu').click(function () {
 });
 $('.sidebarBackground').click(function(){
     $('.sidebarBackground').fadeOut(500);
-    $('.sidebarContent').css('margin-left','-1001px');
+    $('.sidebarContent').css('margin-left','calc(-70% - 2px)');
 })

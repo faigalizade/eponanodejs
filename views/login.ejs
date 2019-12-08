@@ -1,19 +1,16 @@
 <%- include('layouts/head.ejs')%>
 <div class="login">
-        
+
     <div class="log_content">
-            <h3 class="login_headtext">sign in</h3>
-            <form action="" method="post">
-            <p class="login_username_text">USERNAME :</p>
-            <div class="login_username_div"><input class="login_username" type="text" placeholder="Username"></div>
-            <p class="login_password_text">PASSWORD :</p>
-            <div class="login_paswword_div"><input class="login_password" type="password" placeholder="Password"></div>
-            <br><br>
-            <a class="login_forgpass" href="">FORGOT PASSWORD?</a><br><br><br>
-            <div style="text-align: center;"><input class="login_sub" type="submit" value="SIGN IN" type="text"></div>
+        <h3 class="login_headtext">sign in</h3>
+        <form action="" method="post">
+            <label for='login_username' class="login_username_text">USERNAME</label>
+                <input id='login_username' class="login_username" type="text" placeholder="Username">
+            <label for='login_password' class="login_password_text">PASSWORD</label>
+            <input id='login_password' class="login_password" type="password" placeholder="Password">
+            <p><a class="login_forgpass" href="">FORGOT PASSWORD?</a></p>
+            <input class="login_sub" type="submit" value="SIGN IN" type="text">
+        </form>
     </div>
-   
-</form>
-    
 </div>
 <%- include('layouts/footer.ejs')%>

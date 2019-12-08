@@ -39,6 +39,7 @@ app.get('/sale',(req,res) => {
 app.get('/login', (req,res) => {
   res.render('login',
   {
+      page: 'login',
       pageTitle: 'Log In - E P O N A'
   })
 })

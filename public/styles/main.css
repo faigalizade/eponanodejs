@@ -231,3 +231,19 @@ header .user_icon{float:right;padding:3%;width:16px;}
     .wallpaper1{width: 300px;}
     .center{padding: 2% 0;}
   }
+  /* Page Login */
+  .login{
+
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+  }
+  .login_username{
+      padding: 1% 4% 1% 1%;
+  }
+  .login_password{
+    padding: 1% 4% 1% 1%;
+}
+
+}

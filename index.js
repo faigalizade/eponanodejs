@@ -29,6 +29,13 @@ app.get('/about', (req,res) => {
     })
 })
 
+app.get('/sale',(req,res) => {
+    res.render('sale',{
+        page: 'sale',
+        pageTitle: 'SALE - E P O N A'
+    })
+})
+
 app.get('/login', (req,res) => {
   res.render('login',
   {

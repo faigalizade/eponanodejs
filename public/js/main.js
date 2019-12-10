@@ -1,4 +1,4 @@
-$('#menu').click(function () {
+$('#menuButton').click(function () {
     $('.sidebarBackground').fadeIn(500);
     $('.sidebarContent').css('margin-left','0');
     $('body').css('overflow','hidden');

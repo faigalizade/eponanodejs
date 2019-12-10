@@ -9,33 +9,37 @@
     <title><%= pageTitle %></title>
     <link rel="shortcut icon" href="images/logo e.png" type="image/x-icon">
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
-    <script   src="https://code.jquery.com/jquery-3.4.1.min.js"   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="   crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="wrapper">
         <div class="content">
             <%- include('../blocks/sidebar.ejs')%>
-                <header>
-                    <div class="headerCol">
-                        <img id='menu' src="images/menu.svg">
-                    </div>
-                    <a href='/' class="headerCol headerLogo">
-                        <img class="headerLogo_img" src="images/logo.png">
-                    </a>
-                    <div class="headerCol headerUserLinks">
-                        <a class='headerUserLinks_item' href="/login">
-                            <i class="fas fa-user"></i>
-                        </a>
-                        <a class='headerUserLinks_item' >
-                            <i class="far fa-search"></i>
-                        </a>
-                        <a class='headerUserLinks_item' href="/cart">
-                            <i class="fas fa-shopping-cart"></i>
-                        </a>
-                    </div>
-                </header>
-                <div class="center">
-                    <br>
+                    <header>
+                            <div class="headerCol">
+                                <img id='menuButton' src="images/menu.svg">
+                            </div>
+                            <div class="headerCol headerLogo">
+                                <a href='/'>
+                                    <img class="headerLogo_img" src="images/logo.png">
+                                </a>
+                            </div>
+                            <div class="headerCol headerUserLinks">
+                                    <a class='headerUserLinks_item' href="/login">
+                                        <i class="fal fa-user"></i>
+                                    </a>
+                                    <a class='headerUserLinks_item'>
+                                        <i class="fal fa-search"></i>
+                                    </a>
+                                    <a class='headerUserLinks_item' href="/cart">
+                                        <i class="fal fa-shopping-cart"></i>
+                                    </a>
+                            </div>
+                        </header>
+            
+            <div class="center">
+                <br>
 
-                    <!-- HERE BODY STARTS -->
+                <!-- HERE BODY STARTS -->

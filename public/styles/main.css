@@ -5,8 +5,8 @@
 * {
     margin: 0;
     padding: 0;
-    z-index: 1;
     font-family: monospace;
+    outline: none;
 }
 
 .container {
@@ -20,6 +20,7 @@ html {
 }
 a {
     text-decoration: none;
+    color: #000;
 }
 li {
     list-style-type: none;
@@ -32,34 +33,36 @@ li {
 
 .content {
     flex: 1;
-    z-index: 3;
+    padding: 10px 20px;
 }
-
-header {
-    position: fixed;
-    z-index: 2;
-    /* border-bottom:solid 1px #ecf0f1; */
-    background-color: white;
-    width: 60%;
-    padding: .6% 20% 0;
+header{
     display: flex;
-    flex-direction: row;
-
-    /* position: absolute; */
-    /* z-index: 1; */
+    align-items: center;
+    justify-content: center;
 }
-
-
-header .profile_icon {
-    float: right;
-    padding: 3%;
-    width: 18px;
+.headerCol{
+    display: flex;
+    align-items: center;
+    flex: 1;
 }
-
-header .user_icon {
-    float: right;
-    padding: 3% 24% 3% 4%;
-    width: 18px;
+.headerUserLinks{
+    justify-content: flex-end;
+}
+.headerUserLinks_item{
+    cursor: pointer;
+    display: block;
+    padding: 10px;
+    font-size: 15px;
+    transition: opacity .5s;
+}
+.headerUserLinks_item:hover{
+    opacity: .5;
+}
+.headerLogo{
+    justify-content: center;
+}
+.headerLogo_img{
+    width: 150px;
 }
 
 footer {
@@ -90,6 +93,7 @@ menu li {
 }
 .sidebarContentMenu a {
     color: #bdbdbd;
+    cursor: pointer;
 }
 .sidebarContentMenu a:hover{
     opacity: .4;
@@ -119,6 +123,64 @@ menu li {
 .womenContent{
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.sidebarContentSubMenuWrapper{
+    margin-top: 20px;
+    display: flex;
+    width: 40%;
+    justify-content: center;
+}
+.sidebarContentSubMenu li{
+    display: block;
+    padding: 12px 20px;
+    text-align: center;
+}
+.sidebarContentCollectionsWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sidebarContentCollections_header{
+    text-align: center;
+    font-weight: 600;
+    font-size: 15px;
+    margin-top: 20px;
+}
+.sidebarContentCollections{
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+    margin-top: 20px;
+}
+.sidebarContentCollections_item{
+    flex-basis: calc(33.33% - 30px);
+    height: 150px;
+    margin: 0 15px 40px 15px;
+    cursor: pointer;
+    text-align: center;
+}
+.sidebarContentCollections_item img{
+    width: 100%;
+    height: 100%;
+}
+.sidebarFooter{
+    text-align: center;
+    padding: 20px 0;
+}
+.sidebarFooterMenu a{
+    margin: 0 10px;
+}
+.sidebarFooterSocial{
+    font-size: 17px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sidebarFooterSocial a{
+    margin: 0 5px;
 }
 .about,
 .sale {
@@ -167,25 +229,26 @@ menu li {
     z-index: 3;
 }
 .sidebarContent{
-    transition: all .8s;
+    transition: all .5s;
     z-index: 4;
     position: fixed;
     top: 0;
     left: 0;
-    width: 70%;
-    margin-left: calc(-70% - 2px);
+    width: 60%;
+    margin-left: calc(-60% - 2px);
     height: 100%;
     background-color: #ffffff;
     border-right: 1px solid silver;
+    overflow: scroll;
 }
 
-.sidebarContentHeaderLogo{
+.sidebarContentHeader_logo{
     padding: 20px 0 10px 0;
     width: 100%;
     display: flex;
     justify-content: center;
 }
-.sidebarContentHeaderLogo_img{
+.sidebarContentHeader_logoImg{
     width: 100px;
     height: 42px;
 }
@@ -218,9 +281,6 @@ li a:hover {
 .center img {
     cursor: pointer;
 }
-
-/* .center img:hover {opacity: .4;transition: 600ms all;} */
-header .logo {}
 
 .test {
     flex: 3;
@@ -442,6 +502,7 @@ header .logo {}
     border: solid black 1px;
     background: white;
     cursor: pointer;
+    color: #000;
 }
 .login_sub{
     padding: 10px 40px;

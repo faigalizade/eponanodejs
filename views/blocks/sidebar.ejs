@@ -1,21 +1,79 @@
 <div class='sidebarBackground'>
 </div>
 <div class="sidebarContent">
-    <div class="sidebarContentHeaderLogo">
-        <a href="/"><img class='sidebarContentHeaderLogo_img' src="images/logo.png"></a>
+    <div class="sidebarContentHeader_logo">
+        <a href="/">
+            <img class='sidebarContentHeader_logoImg' src="images/logo.png">
+        </a>
     </div>
-
     <menu class='sidebarContentMenu'>
-        <li class="sidebarContentMenu_item<%= (page == 'women') ? '__active' : '' %>"><a href="/women">WOMEN</a></li>
+        <li class="sidebarContentMenu_item<%= (page == 'women') ? '__active' : '' %>"><a>WOMEN</a></li>
         <li class="sidebarContentMenu_item<%= (page == 'about') ? '__active' : '' %>"><a href='/about'>ABOUT</a></li>
         <li class="sidebarContentMenu_item__red"><a href='/sale'>SALE</a></li>
     </menu>
     <div class="womenContent">
         <div class="btnPrimary">
-            EXPLORE WOMEN
+            BOOK
         </div>
-        <div class="womenContentMenu">
-            
+        <div class="sidebarContentSubMenuWrapper">
+            <div class="sidebarContentSubMenu">
+                <li><a href="/new">GIFTS</a></li>
+                <li><a href="/new">NEW STYLES</a></li>
+                <li><a href="/new">JACKETS & VESTS</a></li>
+                <li><a href="/new">SWEATERS & SWEATSHIRTS</a></li>
+                <li><a href="/new">SHIRTS</a></li>
+                <li><a href="/new">PANTS</a></li>
+            </div>
+            <div class="sidebarContentSubMenu">
+                <li><a href="/new">BOOTS</a></li>
+                <li><a href="/new">BASE LAYERS</a></li>
+                <li><a href="/new">SHORTS</a></li>
+                <li><a href="/new">ACCESSORIES</a></li>
+                <li><a href="/new">BAGS</a></li>
+                <li><a href="/new">GEAR</a></li>
+            </div>
+        </div>
+    </div>
+    <div class="sidebarContentCollectionsWrapper">
+        <div class="sidebarContentCollections_header">
+            COLLECTIONS
+        </div>
+        <div class="sidebarContentCollections">
+            <div class="sidebarContentCollections_item">
+                <img src="images/wallpaper.jpg">
+                <p>Item</p>
+            </div>
+            <div class="sidebarContentCollections_item">
+                <img src="images/wallpaper2.jpg">
+                <p>Item</p>
+            </div>
+            <div class="sidebarContentCollections_item">
+                <img src="images/wallpaper3.jpg">
+                <p>Item</p>
+            </div>
+            <div class="sidebarContentCollections_item">
+                <img src="images/wallpaper2.jpg">
+                <p>Item</p>
+            </div>
+            <div class="sidebarContentCollections_item">
+                <img src="images/wallpaper3.jpg">
+                <p>Item</p>
+            </div>
+        </div>
+    </div>
+    <div class="sidebarFooter">
+        <div class="sidebarFooterMenu">
+            <a href="/sizeguide">SIZE GUIDE</a>
+            <a href="/return">RETURN</a>
+            <a href="/careers">CAREERS</a>
+        </div>
+        <div class="sidebarFooterSocial">
+            <a href="https://instagram.com/epona.official">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://instagram.com/epona.official">
+                <i class="fab fa-facebook-f"></i>
+            </a>
         </div>
     </div>
 </div>

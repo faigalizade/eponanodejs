@@ -1,10 +1,18 @@
 <div class='sidebarBackground'>
 </div>
 <div class="sidebarContent">
-    <div class="sidebarContentHeader_logo">
-        <a href="/">
-            <img class='sidebarContentHeader_logoImg' src="images/logo.png">
-        </a>
+    <div class="sidebarContentHeader">
+        <div class="sidebarCloseBtn">
+            <span class="menuButton">
+                    <i class="fal fa-arrow-left"></i>
+            </span>
+        </div>
+        <div class="sidebarContentHeaderCol">
+            <a href="/">
+                <img class='sidebarContentHeaderImg' src="images/logo.png">
+            </a>
+        </div>
+        <div class="sidebarContentHeaderCol"></div>
     </div>
     <menu class='sidebarContentMenu'>
         <li class="sidebarContentMenu_item<%= (page == 'women') ? '__active' : '' %>"><a>WOMEN</a></li>
@@ -12,25 +20,25 @@
         <li class="sidebarContentMenu_item__red"><a href='/sale'>SALE</a></li>
     </menu>
     <div class="womenContent">
-        <div class="btnPrimary">
+        <div class="btnSecondary">
             BOOK
         </div>
         <div class="sidebarContentSubMenuWrapper">
             <div class="sidebarContentSubMenu">
-                <li><a href="/new">GIFTS</a></li>
-                <li><a href="/new">NEW STYLES</a></li>
-                <li><a href="/new">JACKETS & VESTS</a></li>
-                <li><a href="/new">SWEATERS & SWEATSHIRTS</a></li>
-                <li><a href="/new">SHIRTS</a></li>
-                <li><a href="/new">PANTS</a></li>
+                <li><a href="/collections/women-rent">RENT</a></li>
+                <li><a href="/collections/women-new">NEW STYLES</a></li>
+                <li><a href="/collections/women-jackets">JACKETS & VESTS</a></li>
+                <li><a href="/collections/women-sweaters">SWEATERS & SWEATSHIRTS</a></li>
+                <li><a href="/collections/women-shirts">SHIRTS</a></li>
+                <li><a href="/collections/women-pants">PANTS</a></li>
             </div>
             <div class="sidebarContentSubMenu">
-                <li><a href="/new">BOOTS</a></li>
-                <li><a href="/new">BASE LAYERS</a></li>
-                <li><a href="/new">SHORTS</a></li>
-                <li><a href="/new">ACCESSORIES</a></li>
-                <li><a href="/new">BAGS</a></li>
-                <li><a href="/new">GEAR</a></li>
+                <li><a href="/collections/women-boots">BOOTS</a></li>
+                <li><a href="/collections/women-baselayers">BASE LAYERS</a></li>
+                <li><a href="/collections/women-shorts">SHORTS</a></li>
+                <li><a href="/collections/women-accessories">ACCESSORIES</a></li>
+                <li><a href="/collections/women-bags">BAGS</a></li>
+                <li><a href="/collections/women-gear">GEAR</a></li>
             </div>
         </div>
     </div>

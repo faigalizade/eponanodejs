@@ -1,14 +1,18 @@
 <%- include('layouts/head.ejs')%>
 <div class="login">
     <div class="log_content">
-        <h3 class="login_headtext">sign in</h3>
+        <h3 class="login_headtext">SIGN IN</h3>
         <form action="" method="post">
             <label for='login_username' class="login_username_text">USERNAME</label>
-                <input id='login_username' class="login_username" type="text" placeholder="Username">
+                <input id='login_username' required class="login_username" type="text" placeholder="Username">
             <label for='login_password' class="login_password_text">PASSWORD</label>
-            <input id='login_password' class="login_password" type="password" placeholder="Password">
-            <p><a class="login_forgpass" href="">FORGOT PASSWORD?</a></p>
-            <input class="login_sub" type="submit" value="SIGN IN" type="text">
+            <input id='login_password' required class="login_password" type="password" placeholder="Password">
+            <p><a class="login_forgpass" href="/forgot">FORGOT PASSWORD?</a></p>
+            <input id='loginSbmt' type="submit">
+            <div class="loginButtonsWrapper">
+                <a href="/register" class="btnSecondary">REGISTER</a>
+                <label for="loginSbmt" class="btnPrimary">LOGIN <i class="fal fa-arrow-right"></i></label>
+            </div>
         </form>
     </div>
 </div>

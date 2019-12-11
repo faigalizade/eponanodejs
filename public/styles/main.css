@@ -63,6 +63,9 @@ header .headerUserLinks_item svg{
     position: relative;
     width: 100%;
 }
+.searchWrapper input{
+    border: none;
+}
 .headerUserLinks{
     justify-content: flex-end;
 }
@@ -99,23 +102,21 @@ footer {
     text-align: center;
 }
 
-.center menu {
-    list-style: none;
-    padding: 1% 4%;
-    margin-bottom: 5%;
-
-}
-
-/* #img , #img1 , #img2 {
-    opacity: 1;
-} */
-/* img:hover{opacity: .4;transition: 600ms all;} */
 
 menu li {
     font-family: 'Raleway', sans-serif;
     display: inline;
     list-style: none;
     padding: 3% 4%;
+}
+.sidebarCloseBtn{
+    height: 100%;
+    font-size: 28px;
+    flex: 1;
+    padding-left: 20px;
+}
+.sidebarCloseBtn svg{
+    cursor: pointer;
 }
 .sidebarContentMenu a {
     color: #bdbdbd;
@@ -268,13 +269,19 @@ menu li {
     overflow: scroll;
 }
 
-.sidebarContentHeader_logo{
+.sidebarContentHeader{
     padding: 20px 0 10px 0;
     width: 100%;
     display: flex;
     justify-content: center;
 }
-.sidebarContentHeader_logoImg{
+.sidebarContentHeaderCol{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sidebarContentHeaderImg{
     width: 100px;
     height: 42px;
 }
@@ -304,10 +311,6 @@ li a:hover {
     transition: 700ms all;
 }
 
-.center img {
-    cursor: pointer;
-}
-
 .test {
     flex: 3;
 }
@@ -320,12 +323,6 @@ li a:hover {
     float: right;
     flex: 1;
 }
-
-.center {
-
-    padding: 2% 20%;
-}
-
 /* home php */
 .home_text1 {
     font-family: 'Raleway', sans-serif;
@@ -401,75 +398,35 @@ li a:hover {
     width: 100%;
     height: 100%;
 }
-
-@media screen and (max-width: 700px) {
-    .home_text1 {
-        font-size: 10px;
-    }
-
-    .wallpaper1 {
-        width: 200px;
-    }
-
-    .center {
-        padding: 2% 0;
-    }
-
-    header .profile_icon {
-        float: right;
-        padding: 3%;
-        width: 14px;
-    }
-
-    header .user_icon {
-        float: right;
-        padding: 3%;
-        width: 16px;
-    }
-
-    .test2 {
-        flex: 2
-    }
-
-    .test1 {
-        flex: 1;
-    }
-
-    #menu {
-        width: 20px
-    }
+.mainContent{
+    margin-top: 25px;
+    width: 100%;
+    height: calc(100vh - 40px);
 }
-
-@media screen and (min-width: 700px) and (max-width:1400px) {
-    .home_text1 {
-        font-size: 13px;
-
-    }
-
-    header .profile_icon {
-        width: 16px;
-    }
-
-    header .user_icon {
-        width: 16px;
-        padding: 3% 10% 3% 4%;
-    }
-
-    .wallpaper1 {
-        width: 300px;
-    }
-
-    .center {
-        padding: 2% 0;
-    }
+.mainContent_mainImage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/mainWallpaper.jpg") ;
+    background-size:     cover;
+    background-repeat:   no-repeat;
+    background-position: center center;  
+    color: #fff;
+    font-weight: 600;
+    font-size: 35px;
+    transition: opacity .6s;
+    text-shadow: 0 0 15px #000;
 }
-
+.mainContent_mainImage:hover{
+    opacity: .7;
+}
 /* Page Login */
 .login {
     display: flex;
     flex-direction: column;
-
-    /* justify-content: center; */
+    justify-content: center;
     align-items: center;
     margin-bottom: 10%;
 
@@ -478,9 +435,10 @@ li a:hover {
 
 .login_username,
 .login_password {
-    padding:  10px 0;
+    padding:  10px 5px;
     width: 100%;
     margin-bottom: 20px;
+    border: 1px solid #bdbdbd;
 }
 
 .login_headtext {
@@ -515,27 +473,95 @@ li a:hover {
     margin-top: 5%;
     border: solid 1px;
     padding: 12px 120px 40px 120px;
-    width: 40%;
+    width: 23%;
     text-align: center;
+}
+#loginSbmt{
+    display: none;
 }
 .btnPrimary{
     padding: 10px 40px;
-    border: solid black 1px;
-    background: white;
+    border: solid #fff 1px;
+    background: #000;
     cursor: pointer;
-    color: #000;
+    color: #fff;
+    transition: 600ms all;
 }
-.login_sub{
+.btnSecondary{
     padding: 10px 40px;
     border: solid black 1px;
     background: white;
     cursor: pointer;
-    margin-top: 5%;
+    transition: 600ms all;
+}
+.loginButtonsWrapper{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.btnSecondary:hover{
+    border-color: #fff;
+    background: #000;
+    color: #fff;
+}
+.btnPrimary:hover{
+    background: #fff;
+    border-color: #000;
+    color: #000;
 }
 
-.login_sub:hover,
-.btnPrimary:hover {
-    transition: 600ms all;
-    background: black;
-    color: white;
-}
+  
+  /* 
+    ##Device = Laptops, Desktops
+    ##Screen = B/w 1025px to 1280px
+  */
+  
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    
+    /* CSS */
+    
+  }
+  
+  /* 
+    ##Device = Tablets, Ipads (portrait)
+    ##Screen = B/w 768px to 1024px
+  */
+  
+  @media (min-width: 768px) and (max-width: 1024px) {
+    
+    /* CSS */
+    
+  }
+  
+  /* 
+    ##Device = Tablets, Ipads (landscape)
+    ##Screen = B/w 768px to 1024px
+  */
+  
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    
+    /*  */
+    
+  }
+  
+  /* 
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+    ##Screen = B/w 481px to 767px
+  */
+  
+  @media (min-width: 481px) and (max-width: 767px) {
+    
+    /* CSS */
+    
+  }
+  
+  /* 
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+  */
+  
+  @media (min-width: 320px) and (max-width: 480px) {
+    
+    /* CSS */
+    
+  }

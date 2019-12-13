@@ -3,53 +3,146 @@ const path = require('path')
 const mongoose = require('mongoose')
 const app = express()
 const cookieParser = require('cookie-parser')
+const bodyParser = require('body-parser')
+const fs = require('fs')
+const users = require('./models/users')
 const PORT = process.env.PORT || 3000
-
 
 //Init middleware
 // app.use(logger)
 
-
-app.set('view engine','ejs')
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({
+    extended: true
+}))
+app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, '/views'))
 app.use(cookieParser())
 
+//GET
 app.get('/', (req, res) => {
-    res.render('home',
-    {   
+
+    res.render('home', {
         page: 'home',
-        pageTitle:'E P O N A',
+        pageTitle: 'E P O N A',
     })
 })
 
-app.get('/about', (req,res) => {
-    res.render('about',
-    {
+app.get('/test', async (req, res) => {
+    var userMap = {}
+    await users.find({
+        mail: 'faiq.alizade.00@mail.ru'
+    }, function (err, users) {
+        var i = 0
+        users.forEach(function (user) {
+            userMap[i] = user;
+            i++
+        });
+        res.render('home', {
+            page: 'home',
+            pageTitle: 'E P O N A',
+        })
+    })
+    console.log(userMap)
+
+})
+
+app.get('/about', (req, res) => {
+    res.render('about', {
         page: 'about',
         pageTitle: 'About - E P O N A'
     })
 })
 
-app.get('/sale',(req,res) => {
-    res.render('sale',{
+app.get('/sale', (req, res) => {
+    res.render('sale', {
         page: 'sale',
         pageTitle: 'SALE - E P O N A'
     })
 })
 
-app.get('/login', (req,res) => {
-  res.render('login',
-  {
-      page: 'login',
-      pageTitle: 'Log In - E P O N A'
-  })
+app.get('/login', (req, res) => {
+    res.render('login', {
+        page: 'login',
+        pageTitle: 'Log In - E P O N A',
+        incorrect: false
+    })
 })
+app.get('/register', (req, res) => {
+    res.render('register', {
+        page: 'register',
+        pageTitle: 'Registration - E P O N A',
+        isEmail: false
+    })
+})
+//POST
 
+app.post('/register', async (req, res) => {
+    var isUser = {}
+    await users.find({
+        mail: req.body.registerEmail
+    }, function (err, users) {
+        var i = 0
+        users.forEach(function (user) {
+            isUser[i] = user;
+            i++
+        });
+    })
+    if (Object.entries(isUser).length === 0 && isUser.constructor === Object) {
+        var newUser = new users({
+            name: req.body.registerName,
+            surname: req.body.registerSurname,
+            mail: req.body.registerEmail,
+            password: req.body.CreatePassword
+        })
+        newUser.save((err, result) => {
+            // console.log(err, result)
+        })
+        res.render('home', {
+            page: 'home',
+            pageTitle: 'E P O N A',
+        })
+    } else {
+        res.render('register', {
+            page: 'register',
+            pageTitle: 'Registration - E P O N A',
+            isEmail: true
+        })
+    }
+})
+app.post('/login', async (req, res) => {
+    var isUser = {}
+    await users.find({
+        mail: req.body.login_username
+    }, function (err, users) {
+        var i = 0
+        users.forEach(function (user) {
+            isUser[i] = user;
+            i++
+        });
+    })
+    if (Object.entries(isUser).length !== 0 && isUser.constructor === Object) {
+        if (req.body.login_password == isUser[0].password) {
+            res.cookie('user', 'john doe', { maxAge: 900000, httpOnly: true });
+            res.render('home', {
+                page: 'home',
+                pageTitle: 'E P O N A',
+            })
+        }
+
+    } else {
+        res.render('login', {
+            page: 'register',
+            pageTitle: 'Log in - E P O N A',
+            incorrect: true
+        })
+    }
+})
 // ADMIN
-app.get('/admin',(req,res) => {
-    if(false){
+app.get('/admin', (req, res) => {
+    if (false) {
         res.render('admin/index')
-    }else{
+    } else {
         res.redirect('/')
     }
 })
@@ -58,16 +151,12 @@ app.get('/admin',(req,res) => {
 app.use(express.static(path.join(__dirname, 'public')))
 
 async function start() {
-    try {
-        mongoose.connect(
-        'mongodb+srv://faiq:faiq5518585@cluster0-pmbrg.mongodb.net/test',
-        {
-          useNewUrlParser: true,
-          useFindAndModify: false
+    mongoose.connect(
+        'mongodb+srv://faiq:faiq5518585@cluster0-pmbrg.mongodb.net/epona?retryWrites=true&w=majority', {
+            useNewUrlParser: true,
+            useFindAndModify: false,
+            useUnifiedTopology: true
         })
-        app.listen(PORT, () => console.log(`Server started on PORT ${PORT}`))
-    } catch (e) {
-      console.log(e)
-    }
-  }
+    app.listen(PORT, () => console.log(`Server started on PORT ${PORT}`))
+}
 start()

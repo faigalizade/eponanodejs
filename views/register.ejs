@@ -1,0 +1,42 @@
+<%- include('layouts/head.ejs')%>
+<div class="login">
+    <div class="log_content">
+        <h3 class="login_headtext">REGISTRATION</h3>
+        <form method="post">
+            <%if (isEmail) { %>
+                <p class="registerError errorText">
+                    This Email has been used!
+                </p>
+            <% } %>
+            <label for='registerName' class="login_username_text">
+                NAME
+            </label>
+            <input name='registerName' id='registerName' required class="login_username" type="text" placeholder="Name">
+
+            <label for='registerSurname' class="login_password_text">
+                Surname
+            </label>
+            <input name='registerSurname' id='registerSurname' required class="login_password" type="text" placeholder="Surname">
+
+            <label for='registerEmail' class="login_password_text">
+                Email
+            </label>
+            <input name="registerEmail" id='registerEmail' required class="login_password" type="email" placeholder="Email">
+
+            <label for='CreatePassword' class="login_password_text">
+                Password
+            </label>
+            <input name="CreatePassword" id='CreatePassword' required class="login_password" type="password" placeholder="Password">
+
+
+            <input id='registerSbm' type="submit">
+            <div class="loginButtonsWrapper">
+                    <a href="/login" class="btnSecondary">Sign in</a>
+                    <label for="registerSbm" class="btnPrimary">
+                            Create Account
+                        </label>
+                </div>
+        </form>
+    </div>
+</div>
+<%- include('layouts/footer.ejs')%>

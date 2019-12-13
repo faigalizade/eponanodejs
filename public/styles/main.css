@@ -25,6 +25,10 @@ a {
 li {
     list-style-type: none;
 }
+textarea, 
+input {
+    -webkit-appearance: none;
+}
 .wrapper {
     height: 100%;
     display: flex;
@@ -442,8 +446,6 @@ li a:hover {
 }
 
 .login_headtext {
-    text-align: center;
-    margin: 20px;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -472,11 +474,18 @@ li a:hover {
 .log_content {
     margin-top: 5%;
     border: solid 1px;
-    padding: 12px 120px 40px 120px;
-    width: 23%;
+    padding: 40px 120px;
+    width: 28%;
     text-align: center;
 }
-#loginSbmt{
+.errorText{
+    color: red;
+}
+.registerError{
+    padding: 10px 0;
+}
+#loginSbmt,
+#registerSbm{
     display: none;
 }
 .btnPrimary{

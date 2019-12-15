@@ -78,6 +78,7 @@ app.get('/register', (req, res) => {
 //POST
 
 app.post('/register', async (req, res) => {
+    console.log(req.body)
     var isUser = {}
     await users.find({
         mail: req.body.registerEmail
@@ -94,7 +95,7 @@ app.post('/register', async (req, res) => {
             surname: req.body.registerSurname,
             mail: req.body.registerEmail,
             password: req.body.CreatePassword
-        })
+        })        
         newUser.save((err, result) => {
             // console.log(err, result)
         })

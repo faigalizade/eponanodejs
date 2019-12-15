@@ -17,25 +17,29 @@
     <div class="wrapper">
         <div class="content">
             <%- include('../blocks/sidebar.ejs')%>
-                    <header>
-                            <div class="headerCol">
-                                <img id='menuButton' class='menuButton' src="images/menu.svg">
-                            </div>
-                            <div class="headerCol headerLogo">
-                                <a href='/'>
-                                    <img class="headerLogo_img" src="images/logo.png">
-                                </a>
-                            </div>
-                            <div class="headerCol headerUserLinks">
-                                <a href="/seacrh" class='headerUserLinks_item'>
-                                    <i class="fal fa-search"></i>
-                                </a>
-                                <a class='headerUserLinks_item' href="/cart">
-                                    <i class="fal fa-shopping-cart"></i>
-                                </a>
-                                <a class='headerUserLinks_item' href="/login">
-                                    <i class="fal fa-user"></i>
-                                </a>
-                            </div>
-                        </header>
-                <!-- HERE BODY STARTS -->
+            <header>
+                <div class="headerCol">
+                    <img id='menuButton' class='menuButton' src="images/menu.svg">
+                </div>
+                <div class="headerCol headerLogo">
+                    <a href='/'>
+                        <img class="headerLogo_img" src="images/logo.png">
+                    </a>
+                </div>
+                <div class="headerCol headerUserLinks">
+                    <a href="/seacrh" class='headerUserLinks_item'>
+                        <i class="fal fa-search"></i>
+                    </a>
+                    <a class='headerUserLinks_item' href="/login">
+                        <i class="fal fa-user"></i>
+                    </a>
+                    <a class='headerUserLinks_item cartButton'>
+                        <i class="fal fa-shopping-cart"></i>
+                    </a>
+                    <span class='cartButtonCount '>
+                    1
+                    </span>
+                </div>
+            </header>
+            <%- include('../blocks/cart.ejs') %>
+            <!-- HERE BODY STARTS -->

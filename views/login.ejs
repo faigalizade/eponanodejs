@@ -3,6 +3,11 @@
     <div class="log_content">
         <h3 class="login_headtext">SIGN IN</h3>
         <form method="post">
+            <%if (incorrect) { %>
+                <p class="registerError errorText">
+                    Email or password is incorrect!
+                </p>
+            <% } %>
             <label for='login_username' class="login_username_text">
                 Email
             </label>

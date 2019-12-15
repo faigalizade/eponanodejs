@@ -5,6 +5,7 @@ const app = express()
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 const fs = require('fs')
+const bcrypt = require('bcrypt')
 const users = require('./models/users')
 const PORT = process.env.PORT || 3000
 
@@ -78,18 +79,20 @@ app.get('/register', (req, res) => {
 //POST
 
 app.post('/register', async (req, res) => {
-    console.log(req.body)
-    var isUser = {}
-    await users.find({
-        mail: req.body.registerEmail
-    }, function (err, users) {
-        var i = 0
-        users.forEach(function (user) {
-            isUser[i] = user;
-            i++
-        });
-    })
-    if (Object.entries(isUser).length === 0 && isUser.constructor === Object) {
+    var isUser
+    async function checkIsUser(){
+        await users.find({
+            mail: req.body.registerEmail
+        }, function (err, users) {
+            if(users.length != 0){
+                isUser = false
+            }else{
+                isUser = true
+            }
+        })
+    }
+    await checkIsUser()
+    if (isUser) {
         var newUser = new users({
             name: req.body.registerName,
             surname: req.body.registerSurname,
@@ -112,25 +115,30 @@ app.post('/register', async (req, res) => {
     }
 })
 app.post('/login', async (req, res) => {
-    var isUser = {}
-    await users.find({
-        mail: req.body.login_username
-    }, function (err, users) {
-        var i = 0
-        users.forEach(function (user) {
-            isUser[i] = user;
-            i++
-        });
-    })
-    if (Object.entries(isUser).length !== 0 && isUser.constructor === Object) {
-        if (req.body.login_password == isUser[0].password) {
-            res.cookie('user', 'john doe', { maxAge: 900000, httpOnly: true });
+    var isUser
+    async function checkIsUser(){
+        await users.find({
+            mail: req.body.login_username
+        }, function (err, users) {
+            if(users.length == 0){
+                isUser = false
+            }else{
+                if(users[0].password == req.body.login_password){
+                    isUser = true
+                }else{
+                    isUser = false
+                }
+            }
+        })
+    }
+    await checkIsUser()
+
+    if (isUser) {
+            // res.cookie('user', 'john doe', { maxAge: 900000, httpOnly: true });
             res.render('home', {
                 page: 'home',
                 pageTitle: 'E P O N A',
             })
-        }
-
     } else {
         res.render('login', {
             page: 'register',

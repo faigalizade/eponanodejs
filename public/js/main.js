@@ -7,7 +7,11 @@ $('.menuButton').click(function () {
         sidebar = !sidebar
     }else{
         $('.sidebarBackground').fadeOut(500)
-        $('.sidebarContent').css('margin-left','calc(-60% - 2px)')
+        if($(window).width() <= 480){
+            $('.sidebarContent').css('margin-left','calc(-100% - 2px)')
+        }else{
+            $('.sidebarContent').css('margin-left','calc(-60% - 2px)')
+        }
         $('body').css('overflow','scroll')
         sidebar = !sidebar
     }
@@ -15,7 +19,11 @@ $('.menuButton').click(function () {
 $('.sidebarBackground').click(function(){
     $('body').css('overflow','scroll')
     $('.sidebarBackground').fadeOut(500)
-    $('.sidebarContent').css('margin-left','calc(-60% - 2px)')
+    if($(window).width() <= 480){
+        $('.sidebarContent').css('margin-left','calc(-100% - 2px)')
+    }else{
+        $('.sidebarContent').css('margin-left','calc(-60% - 2px)')
+    }
     sidebar = !sidebar
 })
 
@@ -29,13 +37,21 @@ $('.cartButton').click(function () {
     }else{
         $('body').css('overflow','scroll')
         $('.cartBackground').fadeOut(500)
-        $('.cartWrapper').css('margin-right','calc(-35% - 2px)')
+        if($(window).width() <= 480){
+            $('.cartWrapper').css('margin-right','calc(-100% - 2px)')
+        }else{
+            $('.cartWrapper').css('margin-right','calc(-35% - 2px)')
+        }
         cartbar = !cartbar
     }
 })
 $('.cartBackground').click(function(){
     $('body').css('overflow','scroll')
     $('.cartBackground').fadeOut(500)
-    $('.cartWrapper').css('margin-right','calc(-35% - 2px)')
+    if($(window).width() <= 480){
+        $('.cartWrapper').css('margin-right','calc(-100% - 2px)')
+    }else{
+        $('.cartWrapper').css('margin-right','calc(-35% - 2px)')
+    }
     cartbar = !cartbar
 })

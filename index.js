@@ -80,9 +80,10 @@ app.get('/register', (req, res) => {
 
 app.post('/register', async (req, res) => {
     var isUser
+    var reqEmail = req.body.registerEmail.toLowerCase()
     async function checkIsUser(){
         await users.find({
-            mail: req.body.registerEmail
+            mail: reqEmail
         }, function (err, users) {
             if(users.length != 0){
                 isUser = false
@@ -96,7 +97,7 @@ app.post('/register', async (req, res) => {
         var newUser = new users({
             name: req.body.registerName,
             surname: req.body.registerSurname,
-            mail: req.body.registerEmail,
+            mail: reqEmail,
             password: req.body.CreatePassword
         })        
         newUser.save((err, result) => {
@@ -116,9 +117,10 @@ app.post('/register', async (req, res) => {
 })
 app.post('/login', async (req, res) => {
     var isUser
+    var reqEmail = req.body.login_username.toLowerCase()
     async function checkIsUser(){
         await users.find({
-            mail: req.body.login_username
+            mail: reqEmail
         }, function (err, users) {
             if(users.length == 0){
                 isUser = false

@@ -29,24 +29,24 @@ app.get('/', (req, res) => {
     })
 })
 
-app.get('/test', async (req, res) => {
-    var userMap = {}
-    await users.find({
-        mail: 'faiq.alizade.00@mail.ru'
-    }, function (err, users) {
-        var i = 0
-        users.forEach(function (user) {
-            userMap[i] = user;
-            i++
-        });
-        res.render('home', {
-            page: 'home',
-            pageTitle: 'E P O N A',
-        })
-    })
-    console.log(userMap)
+// app.get('/test', async (req, res) => {
+//     var userMap = {}
+//     await users.find({
+//         mail: 'faiq.alizade.00@mail.ru'
+//     }, function (err, users) {
+//         var i = 0
+//         users.forEach(function (user) {
+//             userMap[i] = user;
+//             i++
+//         });
+//         res.render('home', {
+//             page: 'home',
+//             pageTitle: 'E P O N A',
+//         })
+//     })
+//     console.log(userMap)
 
-})
+// })
 
 app.get('/about', (req, res) => {
     res.render('about', {

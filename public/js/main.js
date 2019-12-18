@@ -55,3 +55,4 @@ $('.cartBackground').click(function(){
     }
     cartbar = !cartbar
 })
+$('.mainContent').fadeIn(500);

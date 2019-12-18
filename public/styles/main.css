@@ -1,18 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 * {
     margin: 0;
     padding: 0;
-    font-family: monospace;
+    font-family: 'Montserrat', sans-serif;
     outline: none;
 }
 
 .container {
     padding: 0 30px;
 }
-
+body{
+    /* padding: 0 15%; */
+}
 body,
 html {
     /* padding: 0 10%; */
@@ -40,6 +42,7 @@ input {
     padding: 15px 20px;
 }
 header{
+    /* position: fixed; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -515,15 +518,40 @@ li a:hover {
 .mainContent{
     margin-top: 25px;
     width: 100%;
-    height: calc(100vh - 40px);
+    height: calc(100% - 40px);
+}
+.mainContent_text{
+    text-align: center;
+    margin-top: 70px;
+}
+.mainContent_text2{
+    text-align: center;
+    width: 30%;
+    margin-top: 30px;
+}
+.mainContent_button{
+    margin-top: 15px;
+    border: black 1px solid;
+    background-color: white;
+    transition: 500ms all;
+    padding: .6% 5%;
+}
+.mainContent_button:hover{
+    background-color: black;
+}
+.mainContent_textdiv{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
 }
 .mainContent_mainImage{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
-    background-image: url("../images/mainWallpaper.jpg") ;
+    height: 100vh;
+    background-image: url("../images/happy.jpg") ;
     background-size:     cover;
     background-repeat:   no-repeat;
     background-position: center center;  
@@ -533,6 +561,76 @@ li a:hover {
     transition: opacity .6s;
     text-shadow: 0 0 15px #000;
 }
+.mainContent_image_divMan{
+    height: 600px;
+    display: flex;
+    flex-direction: row;
+}
+.image_div2{
+    padding: 0 1% 1% 1%;
+    width: 96%;
+}
+.mainContent_imageCont_div{
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+.mainContent_image_div3{
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.image_div{padding: 1%; width: 100%;}
+.mainContent_mainImage_man , .mainContent_mainImage_woman , .mainContent_mainImage_ep , .mainContent_mainImage_ep2 , .mainContent_mainImage_ep3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    width: 100%;
+    height: 100%;
+
+    background-size:     cover;
+    background-repeat:   no-repeat;
+    background-position: center center;  
+    color: #fff;
+    font-weight: 600;
+    font-size: 35px;
+    transition: opacity .6s;
+    text-shadow: 0 0 15px #000;
+}
+.mainContent_mainImage_man:hover , .mainContent_mainImage_woman:hover , .mainContent_mainImage_ep:hover , .mainContent_mainImage_ep2:hover , .mainContent_mainImage_ep3:hover , .mainContent_mainImageCont:hover{ 
+    opacity: .3;
+}
+.mainContent_mainImage_man{    background-image: url("../images/wallpaper.jpg") ;}
+.mainContent_mainImage_woman{    background-image: url("../images/wallpaper11.jpg") ;}
+.mainContent_mainImage_ep{ background-image: url("../images/eponaimg1.jpg") ;}
+.mainContent_mainImage_ep2{ background-image: url("../images/eponaimg2.jpg") ;}
+.mainContent_mainImage_ep3{ background-image: url("../images/eponaimg3.jpg") ; width: 98%;margin-bottom: 0; margin-top:75px;}
+.main_content_image_text{font-size: 25px;font-weight: 150;}
+.mainContent_mainImageCont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+
+    width: 70%;
+    
+    height: 98%;
+    background-image: url("../images/contimg.jpg") ;
+    background-size:     cover;
+    background-repeat:   no-repeat;
+    background-position: center center;  
+    color: #fff;
+    font-weight: 600;
+    font-size: 35px;
+    transition: opacity .6s;
+    text-shadow: 0 0 15px #000;
+}
+
 .mainContent_mainImage:hover{
     opacity: .7;
 }

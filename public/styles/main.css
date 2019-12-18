@@ -516,8 +516,9 @@ li a:hover {
     height: 100%;
 }
 .mainContent{
+    padding: 0 15%;
     margin-top: 25px;
-    width: 100%;
+    width: 70%;
     height: calc(100% - 40px);
 }
 .mainContent_text{

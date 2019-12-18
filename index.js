@@ -13,6 +13,7 @@ const auth = require('./middleware/auth.js')
 const PORT = process.env.PORT || 3000
 
 //Init middleware
+app.use(express.json())
 app.use(auth)
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
@@ -70,46 +71,9 @@ app.get('/register', (req, res) => {
 })
 //POST
 
-// app.post('/register', async (req, res) => {
-//     var isUser
-//     var reqEmail = req.body.registerEmail.toLowerCase()
-//     async function checkIsUser(){
-//         await users.find({
-//             mail: reqEmail
-//         }, function (err, users) {
-//             if(users.length != 0){
-//                 isUser = false
-//             }else{
-//                 isUser = true
-//             }
-//         })
-//     }
-//     await checkIsUser()
-//     if (isUser) {
-//         var newUser = new users({
-//             name: req.body.registerName,
-//             surname: req.body.registerSurname,
-//             mail: reqEmail,
-//             password: req.body.CreatePassword
-//         })        
-//         newUser.save((err, result) => {
-//             // console.log(err, result)
-//         })
-//         res.render('home', {
-//             page: 'home',
-//             pageTitle: 'E P O N A',
-//         })
-//     } else {
-//         res.render('register', {
-//             page: 'register',
-//             pageTitle: 'Registration - E P O N A',
-//             isEmail: true
-//         })
-//     }
-// })
 
 app.post('/register', async (req, res) => {
-    var reqEmail = req.body.registerEmail.toLowerCase()
+        var reqEmail = req.body.registerEmail.toLowerCase()
     const emailExist = await users.findOne({
         mail: reqEmail
     })
@@ -140,7 +104,7 @@ app.post('/register', async (req, res) => {
 
 
 app.post('/login', async (req, res) => {
-    var reqEmail = req.body.login_username.toLowerCase()
+        var reqEmail = req.body.login_username.toLowerCase()
     const emailExist = await users.findOne({
         mail: reqEmail
     })
@@ -154,7 +118,8 @@ app.post('/login', async (req, res) => {
         const validPass = await bcrypt.compare(req.body.login_password,emailExist.password)
         if(validPass){
             const token = jwt.sign({_id:emailExist._id},TOKEN_SECRET)
-            res.header('auth-token',token).render('home', {
+            // console.log(token);
+            res.header('Authorization',token,).render('home', {
                 page: 'home',
                 pageTitle: 'E P O N A',
             })
@@ -166,20 +131,6 @@ app.post('/login', async (req, res) => {
             })
         }
     }
-
-    // if (isUser) {
-    //     // res.cookie('user', 'john doe', { maxAge: 900000, httpOnly: true });
-    //     res.render('home', {
-    //         page: 'home',
-    //         pageTitle: 'E P O N A',
-    //     })
-    // } else {
-    //     res.render('login', {
-    //         page: 'register',
-    //         pageTitle: 'Log in - E P O N A',
-    //         incorrect: true
-    //     })
-    // }
 })
 // ADMIN
 app.get('/admin', (req, res) => {

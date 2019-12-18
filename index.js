@@ -5,13 +5,15 @@ const app = express()
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 const fs = require('fs')
+const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 const users = require('./models/users')
+const TOKEN_SECRET = 'ALFAgroup'
+const auth = require('./middleware/auth.js')
 const PORT = process.env.PORT || 3000
 
 //Init middleware
-// app.use(logger)
-
+app.use(auth)
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
     extended: true
@@ -29,24 +31,7 @@ app.get('/', (req, res) => {
     })
 })
 
-// app.get('/test', async (req, res) => {
-//     var userMap = {}
-//     await users.find({
-//         mail: 'faiq.alizade.00@mail.ru'
-//     }, function (err, users) {
-//         var i = 0
-//         users.forEach(function (user) {
-//             userMap[i] = user;
-//             i++
-//         });
-//         res.render('home', {
-//             page: 'home',
-//             pageTitle: 'E P O N A',
-//         })
-//     })
-//     console.log(userMap)
 
-// })
 
 app.get('/about', (req, res) => {
     res.render('about', {
@@ -63,11 +48,18 @@ app.get('/sale', (req, res) => {
 })
 
 app.get('/login', (req, res) => {
-    res.render('login', {
-        page: 'login',
-        pageTitle: 'Log In - E P O N A',
-        incorrect: false
-    })
+    if(!req.userLogged){
+        res.render('login', {
+            page: 'login',
+            pageTitle: 'Log In - E P O N A',
+            incorrect: false
+        })
+    }else{
+        res.render('home', {
+            page: 'home',
+            pageTitle: 'E P O N A',
+        })
+    }
 })
 app.get('/register', (req, res) => {
     res.render('register', {
@@ -78,28 +70,64 @@ app.get('/register', (req, res) => {
 })
 //POST
 
+// app.post('/register', async (req, res) => {
+//     var isUser
+//     var reqEmail = req.body.registerEmail.toLowerCase()
+//     async function checkIsUser(){
+//         await users.find({
+//             mail: reqEmail
+//         }, function (err, users) {
+//             if(users.length != 0){
+//                 isUser = false
+//             }else{
+//                 isUser = true
+//             }
+//         })
+//     }
+//     await checkIsUser()
+//     if (isUser) {
+//         var newUser = new users({
+//             name: req.body.registerName,
+//             surname: req.body.registerSurname,
+//             mail: reqEmail,
+//             password: req.body.CreatePassword
+//         })        
+//         newUser.save((err, result) => {
+//             // console.log(err, result)
+//         })
+//         res.render('home', {
+//             page: 'home',
+//             pageTitle: 'E P O N A',
+//         })
+//     } else {
+//         res.render('register', {
+//             page: 'register',
+//             pageTitle: 'Registration - E P O N A',
+//             isEmail: true
+//         })
+//     }
+// })
+
 app.post('/register', async (req, res) => {
-    var isUser
     var reqEmail = req.body.registerEmail.toLowerCase()
-    async function checkIsUser(){
-        await users.find({
-            mail: reqEmail
-        }, function (err, users) {
-            if(users.length != 0){
-                isUser = false
-            }else{
-                isUser = true
-            }
+    const emailExist = await users.findOne({
+        mail: reqEmail
+    })
+    if (emailExist) {
+        res.render('register', {
+            page: 'register',
+            pageTitle: 'Registration - E P O N A',
+            isEmail: true
         })
-    }
-    await checkIsUser()
-    if (isUser) {
+    } else {
+        const salt = await bcrypt.genSalt(10)
+        const hashPassword = await bcrypt.hash(req.body.CreatePassword,salt)
         var newUser = new users({
             name: req.body.registerName,
             surname: req.body.registerSurname,
             mail: reqEmail,
-            password: req.body.CreatePassword
-        })        
+            password: hashPassword
+        })
         newUser.save((err, result) => {
             // console.log(err, result)
         })
@@ -107,47 +135,51 @@ app.post('/register', async (req, res) => {
             page: 'home',
             pageTitle: 'E P O N A',
         })
-    } else {
-        res.render('register', {
-            page: 'register',
-            pageTitle: 'Registration - E P O N A',
-            isEmail: true
-        })
     }
 })
-app.post('/login', async (req, res) => {
-    var isUser
-    var reqEmail = req.body.login_username.toLowerCase()
-    async function checkIsUser(){
-        await users.find({
-            mail: reqEmail
-        }, function (err, users) {
-            if(users.length == 0){
-                isUser = false
-            }else{
-                if(users[0].password == req.body.login_password){
-                    isUser = true
-                }else{
-                    isUser = false
-                }
-            }
-        })
-    }
-    await checkIsUser()
 
-    if (isUser) {
-            // res.cookie('user', 'john doe', { maxAge: 900000, httpOnly: true });
-            res.render('home', {
+
+app.post('/login', async (req, res) => {
+    var reqEmail = req.body.login_username.toLowerCase()
+    const emailExist = await users.findOne({
+        mail: reqEmail
+    })
+    if (!emailExist) {
+        res.render('login', {
+            page: 'login',
+            pageTitle: 'Log In - E P O N A',
+            incorrect: true
+        })
+    } else {
+        const validPass = await bcrypt.compare(req.body.login_password,emailExist.password)
+        if(validPass){
+            const token = jwt.sign({_id:emailExist._id},TOKEN_SECRET)
+            res.header('auth-token',token).render('home', {
                 page: 'home',
                 pageTitle: 'E P O N A',
             })
-    } else {
-        res.render('login', {
-            page: 'register',
-            pageTitle: 'Log in - E P O N A',
-            incorrect: true
-        })
+        }else{
+            res.render('login', {
+                page: 'login',
+                pageTitle: 'Log In - E P O N A',
+                incorrect: true
+            })
+        }
     }
+
+    // if (isUser) {
+    //     // res.cookie('user', 'john doe', { maxAge: 900000, httpOnly: true });
+    //     res.render('home', {
+    //         page: 'home',
+    //         pageTitle: 'E P O N A',
+    //     })
+    // } else {
+    //     res.render('login', {
+    //         page: 'register',
+    //         pageTitle: 'Log in - E P O N A',
+    //         incorrect: true
+    //     })
+    // }
 })
 // ADMIN
 app.get('/admin', (req, res) => {

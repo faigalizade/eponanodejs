@@ -5,7 +5,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: monospace;
+    font-family: 'Montserrat',sans-serif;
     outline: none;
 }
 
@@ -520,7 +520,7 @@ li a:hover {
     width: 100%;
     height: calc(100% - 40px);
 }
-.mainContexnt_text{
+.mainContent_text{
     text-align: center;
     margin-top: 70px;
 }
@@ -585,7 +585,7 @@ li a:hover {
 
 }
 .image_div{padding: 1%; width: 100%;}
-.mainContent_mainImage_man , .mainContent_mainImage_woman , .mainContent_mainImage_ep , .mainContent_mainImage_ep2 , .mainContent_mainImage_ep3{
+.mainContent_mainImage_man , .mainContent_mainImage_woman , .mainContent_mainImage_ep , .mainContent_mainImage_ep2 , .mainContent_mainImage_ep3 , .mainContent_mainImage_ep4 , .mainContent_mainImage_ep5{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -602,7 +602,7 @@ li a:hover {
     transition: opacity .6s;
     text-shadow: 0 0 15px #000;
 }
-.mainContent_mainImage_man:hover , .mainContent_mainImage_woman:hover , .mainContent_mainImage_ep:hover , .mainContent_mainImage_ep2:hover , .mainContent_mainImage_ep3:hover , .mainContent_mainImageCont:hover{ 
+.mainContent_mainImage_man:hover , .mainContent_mainImage_woman:hover , .mainContent_mainImage_ep:hover , .mainContent_mainImage_ep2:hover , .mainContent_mainImage_ep3:hover , .mainContent_mainImageCont:hover , .mainContent_mainImage_ep5:hover , .mainContent_mainImage_ep4:hover{ 
     opacity: .3;
 }
 .mainContent_mainImage_man{    background-image: url("../images/wallpaper.jpg") ;}
@@ -610,6 +610,8 @@ li a:hover {
 .mainContent_mainImage_ep{ background-image: url("../images/eponaimg1.jpg") ;}
 .mainContent_mainImage_ep2{ background-image: url("../images/eponaimg2.jpg") ;}
 .mainContent_mainImage_ep3{ background-image: url("../images/eponaimg3.jpg") ; width: 98%;margin-bottom: 0; margin-top:75px;}
+.mainContent_mainImage_ep4{ background-image: url("../images/eponaimg4.jpg") ;margin-top: 52px;}
+.mainContent_mainImage_ep5{ background-image: url("../images/eponaimg5.jpg") ;margin-top: 52px;}
 .main_content_image_text{font-size: 25px;font-weight: 150;}
 .mainContent_mainImageCont{
     display: flex;

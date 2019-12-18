@@ -55,8 +55,8 @@ header{
     background-color: #f5f6fa;
 } */
 #menuButton{
-    width: 25px;
-    height: 25px;
+    width: 23px;
+    height: 23px;
     cursor: pointer;
 }
 header .headerUserLinks_item svg{
@@ -99,9 +99,9 @@ header .headerUserLinks_item svg{
     width: 100%;
 }
 .headerLogo_img{
-    width: 130px;
+    width: 100px;
     position: absolute;
-    top: -20px;
+    top: -13px;
 } 
 
 footer {
@@ -793,10 +793,10 @@ li a:hover {
         width: 100px;
         top: -14px;
     }
-    #menuButton{
-        width: 17px;
-        height: 17px;
-    }
+    /* #menuButton{
+        width: 15px;
+        height: 15px;
+    } */
     .headerUserLinks_item{
         width: 13px;
         height: 13px;

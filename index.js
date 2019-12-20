@@ -20,8 +20,7 @@ app.use(bodyParser.urlencoded({
 app.use(session({
     secret: TOKEN_SECRET,
     resave: false,
-    saveUninitialized: false,
-    cookie: {secure: false, maxAge: 60000}
+    saveUninitialized: false
 }))
 
 

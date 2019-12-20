@@ -1,22 +1,23 @@
 <%- include('layouts/head.ejs')%>
+<% var errorMsg %>
 <div class="login">
     <div class="log_content">
         <h3 class="login_headtext">SIGN IN</h3>
         <form method="post" class="login_form" >
-            <%if (incorrect) { %>
+            <%if (errorMsg) { %>
                 <p class="registerError errorText">
-                    Email or password is incorrect!
+                    <%= errorMsg %>
                 </p>
             <% } %>
             <label for='login_username' class="login_username_text">
                 Email
             </label>
-            <input id='login_username' required class="login_username" name="login_username" type="email" placeholder="Email">
+            <input id='login_username' required class="login_username" name="email" type="email" placeholder="Email">
 
             <label for='login_password' class="login_password_text">
                 PASSWORD
             </label>
-            <input id='login_password' required class="login_password" name="login_password" type="password" placeholder="Password">
+            <input id='login_password' required class="login_password" name="password" type="password" placeholder="Password">
             <p><a class="login_forgpass" href="/forgot">FORGOT PASSWORD?</a></p>
             <input id='loginSbmt' type="submit">
             <div class="loginButtonsWrapper">

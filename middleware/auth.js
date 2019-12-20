@@ -6,12 +6,13 @@ function initializePassport(passport) {
     passport.use(new LocalStrategy({
         usernameField: 'email'
     }, async function (username, password, done) {
+        username = username.toLowerCase()
         const user = await users.findOne({
             mail: username
         })
         if (user == null) {
             return done(null, false, {
-                message: 'Email is not found'
+                errorMsg: 'Email is not found'
             })
         }
         try {
@@ -20,7 +21,7 @@ function initializePassport(passport) {
                 return done(null, user)
             } else {
                 return done(null, false, {
-                    message: 'Email or password is not right'
+                    errorMsg: 'Email or password is not right'
                 })
             }
         } catch (e) {

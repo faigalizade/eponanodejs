@@ -19,17 +19,17 @@ app.use(bodyParser.urlencoded({
 
 app.use(session({
     secret: TOKEN_SECRET,
-    resave: true,
-    saveUninitialized: true
+    resave: false,
+    saveUninitialized: false,
+    cookie: {secure: false, maxAge: 60000}
 }))
 
 
-app.use(passport.initialize());
-app.use(passport.session());
+app.use(passport.initialize())
+app.use(passport.session())
 
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, '/views'))
-
 //GET
 require('./middleware/gets')(app,passport)
 //POST

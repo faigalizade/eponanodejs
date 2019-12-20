@@ -5,6 +5,8 @@ module.exports = function(app,passport){
         res.render('home', {
             page: 'home',
             pageTitle: 'E P O N A',
+            isAuth: req.isAuthenticated(),
+            user: req.user
         })
     })
     
@@ -13,31 +15,34 @@ module.exports = function(app,passport){
     app.get('/about', (req, res) => {
         res.render('about', {
             page: 'about',
-            pageTitle: 'About - E P O N A'
+            pageTitle: 'About - E P O N A',
+            isAuth: req.isAuthenticated(),
+            user: req.user
         })
     })
     
     app.get('/sale', (req, res) => {
         res.render('sale', {
             page: 'sale',
-            pageTitle: 'SALE - E P O N A'
+            pageTitle: 'SALE - E P O N A',
+            isAuth: req.isAuthenticated(),
+            user: req.user
         })
     })
     
     app.get('/login', (req, res) => {
-        if(!req.userLogged){
-            res.render('login', {
+        if(!req.isAuthenticated()){
+            return res.render('login', {
                 page: 'login',
-                pageTitle: 'Log In - E P O N A',
-            })
-        }else{
-            res.render('home', {
-                page: 'home',
-                pageTitle: 'E P O N A',
+                pageTitle: 'Log In - E P O N A'
             })
         }
+        res.redirect('/')
     })
     app.get('/register', (req, res) => {
+        if(req.isAuthenticated){
+            return res.redirect('/')
+        }
         res.render('register', {
             page: 'register',
             pageTitle: 'Registration - E P O N A'

@@ -1,11 +1,12 @@
 <%- include('layouts/head.ejs')%>
+<% var errorMsg %>
 <div class="login">
     <div class="log_content">
         <h3 class="login_headtext">REGISTRATION</h3>
         <form method="post">
-            <%if (isEmail) { %>
+            <%if (errorMsg) { %>
                 <p class="registerError errorText">
-                    This Email address has been used!
+                    <%= errorMsg %>
                 </p>
             <% } %>
             <label for='registerName' class="login_username_text">

@@ -5,6 +5,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: monospace;
     font-family: 'Montserrat',sans-serif;
     outline: none;
 }
@@ -12,12 +13,8 @@
 .container {
     padding: 0 30px;
 }
-body{
-    /* padding: 0 15%; */
-}
 body,
 html {
-    /* padding: 0 10%; */
     height: 100%;
 }
 a {

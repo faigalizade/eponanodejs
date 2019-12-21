@@ -50,7 +50,7 @@ module.exports = function(app,passport){
     })
     //Admin
     app.get('/admin', (req, res) => {
-        if (false) {
+        if (true) {
             res.render('admin/index')
         } else {
             res.redirect('/')

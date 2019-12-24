@@ -1,41 +1,123 @@
-*{margin: 0;padding: 0;font-family: 'Open Sans', sans-serif;}
-body{background-color: #ecf0f1;width: 100%;height: 100%;}
-header{background-color: white;padding: 1%;width: 90.8%;display: flex;position: relative;}
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower|Open+Sans|Poppins&display=swap');
-.search_input{border: none;
+
+/* Color scheme https://colorhunt.co/palette/22272 */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+html,
+body {
+    background-color: #f9f7f7;
+    height: 100%;
+    overflow: hidden;
+}
+
+input {
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    width: calc(100% - 20px);
+    background-color: #fff;
+    padding: 20px 10px;
+    display: flex;
+    position: relative;
+}
+
+.search_input {
+    border: none;
     background-color: #ecf0f1;
     border-radius: 5px 0 0 5px;
     padding: 10px 15px;
     width: 240px;
-    }
-.admin_search_icon{
+}
+
+.admin_search_icon {
     cursor: pointer;
-    color: white;  
+    color: white;
     padding: 10px 25px;
     background-color: #3498db;
     border-radius: 0 15px 15px 0;
 }
-.admin_search{
+
+.admin_search {
     /* width: 100%; */
     height: 40px;
     display: flex;
     float: left;
 }
-.dashboard{
+
+.adminWrapper {
+    display: flex;
+    min-height: 100%;
+}
+
+.sidebarLogo {
+    color: white;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebarLogo img {
+    width: 30px;
+}
+
+.adminSidebar {
+    width: 100px;
+    background-color: #3f72af;
+    color: #fff;
+}
+
+.sidebarContent {
+    margin-top: 20px;
+}
+
+.sidebarMenuItem {
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
-    text-align: center;
-    padding: 1vh .6%;
-    background-color: #2980b9;
-    width: 6%;
-    float: left;
-    height: 98vh;
-    min-height: 100%;
-
+    font-size: 30px;
+    color: #fff;
+    padding: 20px 0;
+    transition: background .4s;
 }
-.admin_logo{
+
+.sidebarMenuItem:hover {
+    background-color: #3a69a1;
+}
+
+.sidebarMenuItemTitle {
+    margin-top: 5px;
+    font-size: 13px;
+}
+
+.adminContent {
+    width: calc(100% - 100px);
+    position: fixed;
+    margin-left: 100px;
+    overflow: scroll;
+    height: 100%;
+}
+
+.mainContent {
+    width: calc(100% - 20px);
+    padding: 0 10px;
+}
+
+.dashboardWidgetWrapper {
+    flex: 1;
+}
+
+.admin_logo {
     padding: 0 0 5px 0;
     /* transform: rotate(15deg); */
     /* background-color: red; */
@@ -47,59 +129,206 @@ header{background-color: white;padding: 1%;width: 90.8%;display: flex;position: 
     font-size: 2.5em;
     border-bottom: 1px solid white;
 }
-.admin_icon{margin-top: 15px; color: white; font-size: 3em;padding: 0 0 5px 0;}
-.admin_button , .page_title_text{text-decoration: none; opacity: .4; color: white; font-size: 10px; margin-bottom: 20px; cursor: pointer;}
-.page_title_text{margin-top: 15px;font-family: monospace; font-weight: bold;}
-.content{padding: .2% 0;}
-.admin_button:hover{opacity: 1;transition: 500ms all;}
-.admin_notification_icon{color: #bdc3c7;font-size: 1.5em;position: absolute;right:110px;}
-.admin_message_icon{color: #bdc3c7;font-size: 1.4em;position: absolute;right: 150px;}
-.admin_logo_icon{color: black;font-size: 1.8em;position: absolute;right: 20px;}
-.page_bar{position: absolute; top: 45px; left: 0; background-color:#3498db;color:white;padding: 1% 0;text-align: center;display: flex;flex-direction: column;width: 300px; border-radius:  0 15px 15px 0;}
-.page_bar a{text-decoration: none;transition: 600ms all;padding: 3% 10%;cursor: pointer;}
-.page_bar a:hover{background-color: #2980b9;}
-.content{position: relative;float: left;width: 92.8%;}
-.welcome_text{padding-left: 30px;margin-top: 1%; font-size: 2em;font-family: arial, cursive;}
-.content_flex{display: flex;flex-direction: row;}
-.content_left_flex{display: flex;flex-direction: column;margin-top: 1%;}
-.admin_content_left_divs{
-    /* margin-top: 3%; */
-    margin-left: 30px;
-    border-radius: 15px 15px 0 0;
-    box-shadow: 4px 7px #bdc3c7;
-    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.5);
-    background-color: white;
-    width: 70vh;
-    padding: 0 0 1% 0;
-    text-align: center;
-}
-.orders__div{
-    margin-right: 2%;
-    margin-top: 1%;
-    margin-left: 30px;
-    border-radius: 15px 15px 0 0;
-    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.5);
-    background-color: white;
-    width: 800px;
-    padding: 0;
-    text-align: center;
-}
-.user_logo{font-size: .7em;margin-right: .4%;}
-.orders_img{width: 80px;}
-.div_header_text{
-    margin-bottom: 2%;
-    border-left: 5px solid #2980b9;
-    border-radius: 0 15px 0 0;
-    padding: 1% 0;
+
+.admin_icon {
+    margin-top: 15px;
     color: white;
+    font-size: 3em;
+    padding: 0 0 5px 0;
+}
+
+.admin_button,
+.page_title_text {
+    text-decoration: none;
+    opacity: .4;
+    color: white;
+    font-size: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.page_title_text {
+    margin-top: 15px;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.content {
+    padding: .2% 0;
+}
+
+.admin_button:hover {
+    opacity: 1;
+    transition: 500ms all;
+}
+
+.admin_notification_icon {
+    color: #bdc3c7;
+    font-size: 1.5em;
+    position: absolute;
+    right: 110px;
+}
+
+.admin_message_icon {
+    color: #bdc3c7;
+    font-size: 1.4em;
+    position: absolute;
+    right: 150px;
+}
+
+.admin_logo_icon {
+    color: black;
+    font-size: 1.8em;
+    position: absolute;
+    right: 20px;
+}
+
+.page_bar {
+    position: absolute;
+    top: 45px;
+    left: 0;
     background-color: #3498db;
-}
-.admin_orders_content{
-    display: flex;
-    flex-direction: row;
-}
-.admin_orders{
-    padding: 20px 25px;
+    color: white;
+    padding: 1% 0;
+    text-align: center;
     display: flex;
     flex-direction: column;
+    width: 300px;
+    border-radius: 0 15px 15px 0;
+}
+
+.page_bar a {
+    text-decoration: none;
+    transition: 600ms all;
+    padding: 3% 10%;
+    cursor: pointer;
+}
+
+.page_bar a:hover {
+    background-color: #2980b9;
+}
+
+.content {
+    position: relative;
+    float: left;
+    width: 92.8%;
+}
+
+.welcome_text {
+    padding-left: 30px;
+    margin-top: 1%;
+    font-size: 2em;
+    font-family: arial, cursive;
+}
+
+.dashboardWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboardRow {
+    display: flex;
+    width: calc(100% - 40px);
+    padding: 20px;
+    justify-content: space-between;
+}
+
+.dashboardRowCol {
+    flex-basis: 49.5%;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboardWidget {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    color: #112d4e;
+    flex: 1;
+    box-shadow: 0 8px 30px -10px rgba(150, 170, 180, 0.5);
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboardWidgetHeader {
+    padding: 10px 15px;
+    background-color: #f9f7f7;
+    font-weight: 600;
+    font-size: 19px;
+    border-radius: 5px 5px 0 0;
+}
+
+.dashboardWidgetContent {
+    padding: 10px 15px;
+}
+
+.dashboardWidgetFooter {
+    padding: 10px 15px;
+}
+
+.dashboardRequests {
+    flex: 1;
+}
+
+.dashboardTableHeader {
+    display: flex;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.dashboardTableHeaderItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    font-weight: 600;
+    font-size: 14px;
+}
+.dashboardTableContentItemWrapper {
+    font-size: 14px;
+    display: flex;
+    padding: 10px;
+}
+
+.dashboardTableContentItemWrapper:nth-child(2n) {
+    background-color: #f9f7f7;
+}
+
+.dashboardTableContentItem {
+    flex: 1;
+    text-align: center;
+}
+
+.priceCurrencySymbol {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 12px;
+    height: 10px;
+    margin-left: 5px;
+}
+
+.priceCurrencySymbol img{
+    width: 100%;
+    height: 100%;
+}
+.dashboardTableHeaderItem__orderNumber,
+.dashboardTableContentItem__orderNumber{
+    flex: none;
+    margin-right: 10px;
+    justify-content: center;
+}
+.dashboardTableContentItem__payMethodCash{
+    color: #228d57;
+}
+.orderAction{
+    cursor: pointer;
+    margin: 0 10px;
+}
+.orderAction__remove{
+    color: #C70000;
+}
+.orderAction__check{
+    color: #46C855;
 }

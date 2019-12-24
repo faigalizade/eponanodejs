@@ -1,161 +1,219 @@
 <%- include('head.ejs') %>
-<div class="dashboard">
-    <span class="admin_logo"><i class="fas fa-laugh-wink"></i></span>
-    <!-- <img class="admin_logo" src="images/admin.png" alt=""> -->
-    <br><br><br>
-    <a onclick="page_click('page')" class="admin_button"><span class="admin_icon"><i class="fas fa-fw fa-folder"></i></span><br>PAGES</a>
-    <a class="admin_button" href=""><span class="admin_icon"><i class="fas fa-shopping-cart"></i></span><br>ORDERS</a>
-    <a class="admin_button" href=""><span class="admin_icon"><i class="fas fa-user"></i></span><br>USERS</a>
-    <a class="admin_button" href=""><span class="admin_icon"><i class="fab fa-dropbox"></i></span><br>PRODUCT</a>
-    <a class="admin_button" href=""><span class="admin_icon"><i class="fas fa-cog"></i></span><br>SETTINGS</a>
-    
-</div>
-<header>
-    
-    <div class="admin_search">
-        <input class="search_input" placeholder="Search ..." type="text">
-    <span class="admin_search_icon"><i class="fas fa-search fa-sm"></i></span>
-    </div>
-    <span class="admin_notification_icon"><i class="fas fa-bell fa-fw"></i></span>
-    <span class="admin_message_icon"><i class="fas fa-envelope-open"></i></span>
-    <span class="admin_logo_icon"><i class="fas fa-user-md"></i></span>
-</header>
-<div onclick="content_click('page')"  class="content">
-    
-    <p class="welcome_text">WELCOME ADMIN_NAME !</p>
-    <div class="page_bar">
-        <a>HOME</a>
-        <a>ABOUT</a>
-        <a>SALE</a>
-        <a>+</a>
 
-    </div>
-    <div class="content_flex">
-        <div class="content_left_flex">
-            <div class="admin_content_left_divs">
-                <p class="div_header_text">MESSAGE (5)</p><br>
-                <p style="cursor: pointer;"><span class="user_logo"><i class="fas fa-user"></i></span> babayeff.042 den <a style="color:red">mesaj</a> var!</p><br>
-                <p style="cursor: pointer;"><span class="user_logo"><i class="fas fa-user"></i></span> faiqalizade den <a style="color:red">mesaj</a> var!</p><br>
-                <p style="cursor: pointer;"><span class="user_logo"><i class="fas fa-user"></i></span> cemilealizade den <a style="color:red">mesaj</a> var!</p><br>
-                <p style="cursor: pointer;"><span class="user_logo"><i class="fas fa-user"></i></span> risane.042 den <a style="color:red">mesaj</a> var!</p><br>
-                <p style="cursor: pointer;"><span class="user_logo"><i class="fas fa-user"></i></span> cemilaliyeff.042 den <a style="color:red">mesaj</a>  var!</p><br>
-            </div><br>
-            <div class="admin_content_left_divs">
-                <p class="div_header_text">REQUEST</p><br>
-                <p style="cursor: pointer;"><span class="user_logo"><i class="fas fa-user"></i></span> babayeff.042 den <a style="color:red">mesaj</a> var!</p><br>
-                <p style="cursor: pointer;"><span class="user_logo"><i class="fas fa-user"></i></span> faiqalizade den <a style="color:red">mesaj</a> var!</p><br>
-                <p style="cursor: pointer;"><span class="user_logo"><i class="fas fa-user"></i></span> cemilealizade den <a style="color:red">mesaj</a> var!</p><br>
-                <p style="cursor: pointer;"><span class="user_logo"><i class="fas fa-user"></i></span> risane.042 den <a style="color:red">mesaj</a> var!</p><br>
-                <p style="cursor: pointer;"><span class="user_logo"><i class="fas fa-user"></i></span> cemilaliyeff.042 den <a style="color:red">mesaj</a>  var!</p><br>
-            </div>
-            
+<div class="adminWrapper">
+    <div class="adminSidebar adminCol">
+        <div class="sidebarLogo">
+            <a href="/admin">
+                <img src="images/logo e white_1.svg" />
+            </a>
         </div>
-        <div class="orders__div">
-            <p class="div_header_text">ORDERS</p>
-            <div class="admin_orders_content">
-                <div class="admin_orders">
-                    <img src="images/eponaimg2.jpg" class="orders_img" alt="">
-                    <p>1(<b style="color: red;">X</b>)</p>
-                </div>
-                <div class="admin_orders">
-                    <img src="images/eponaimg2.jpg" class="orders_img" alt="">
-                    <p>1(<b style="color: red;">X</b>)</p>
-                </div>
-                <div class="admin_orders">
-                    <img src="images/eponaimg2.jpg" class="orders_img" alt="">
-                    <p>1(<b style="color: red;">X</b>)</p>
-                </div>
-                <div class="admin_orders">
-                    <img src="images/eponaimg2.jpg" class="orders_img" alt="">
-                    <p>1(<b style="color: red;">X</b>)</p>
-                </div>
-                <div class="admin_orders">
-                    <img src="images/eponaimg2.jpg" class="orders_img" alt="">
-                    <p>1(<b style="color: red;">X</b>)</p>
-                </div>
-                <div class="admin_orders">
-                    <img src="images/eponaimg2.jpg" class="orders_img" alt="">
-                    <p>1(<b style="color: red;">X</b>)</p>
-                </div>
-                
-            </div>
-            <div class="admin_orders_content">
-                <div class="admin_orders">
-                    <img src="images/eponaimg2.jpg" class="orders_img" alt="">
-                    <p>1(<b style="color: red;">X</b>)</p>
-                </div>
-                <div class="admin_orders">
-                    <img src="images/eponaimg2.jpg" class="orders_img" alt="">
-                    <p>1(<b style="color: red;">X</b>)</p>
-                </div>
-                <div class="admin_orders">
-                    <img src="images/eponaimg2.jpg" class="orders_img" alt="">
-                    <p>1(<b style="color: red;">X</b>)</p>
-                </div>
-                <div class="admin_orders">
-                    <img src="images/eponaimg2.jpg" class="orders_img" alt="">
-                    <p>1(<b style="color: red;">X</b>)</p>
-                </div>
-                <div class="admin_orders">
-                    <img src="images/eponaimg2.jpg" class="orders_img" alt="">
-                    <p>1(<b style="color: red;">X</b>)</p>
-                </div>
-                <div class="admin_orders">
-                    <img src="images/eponaimg2.jpg" class="orders_img" alt="">
-                    <p>1(<b style="color: red;">X</b>)</p>
-                </div>
-                
-            </div>
-            <div class="admin_orders_content">
-                <div class="admin_orders">
-                    <img src="images/eponaimg2.jpg" class="orders_img" alt="">
-                    <p>1(<b style="color: red;">X</b>)</p>
-                </div>
-                <div class="admin_orders">
-                    <img src="images/eponaimg2.jpg" class="orders_img" alt="">
-                    <p>1(<b style="color: red;">X</b>)</p>
-                </div>
-                <div class="admin_orders">
-                    <img src="images/eponaimg2.jpg" class="orders_img" alt="">
-                    <p>1(<b style="color: red;">X</b>)</p>
-                </div>
-                <div class="admin_orders">
-                    <img src="images/eponaimg2.jpg" class="orders_img" alt="">
-                    <p>1(<b style="color: red;">X</b>)</p>
-                </div>
-                <div class="admin_orders">
-                    <img src="images/eponaimg2.jpg" class="orders_img" alt="">
-                    <p>1(<b style="color: red;">X</b>)</p>
-                </div>
-                <div class="admin_orders">
-                    <img src="images/eponaimg2.jpg" class="orders_img" alt="">
-                    <p>1(<b style="color: red;">X</b>)</p>
-                </div>
-                
-            </div>
-            
+        <div class="sidebarContent">
+            <a href="/orders" class="sidebarMenuItem">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="sidebarMenuItemTitle">
+                    ORDERS
+                </span>
+            </a>
+            <a href="/users" class="sidebarMenuItem">
+                <i class="fas fa-user-friends"></i>
+                <span class="sidebarMenuItemTitle">
+                    USERS
+                </span>
+            </a>
+            <a href="/products" class="sidebarMenuItem">
+                <i class="fas fa-boxes-alt"></i>
+                <span class="sidebarMenuItemTitle">
+                    PRODUCTS
+                </span>
+            </a>
+            <a href="/pages" class="sidebarMenuItem">
+                <i class="fas fa-file"></i>
+                <span class="sidebarMenuItemTitle">
+                    PAGES
+                </span>
+            </a>
         </div>
     </div>
-    <script>
-        $('.page_bar').hide(0);
-         var i = 0;
-     function page_click(name) {
-        if(i==0){
-            $('.'+name+'_bar').fadeIn(500);
+    <div class="adminCol adminContent">
+        <header>
+            <div class="admin_search">
+                <input class="search_input" placeholder="Search ..." type="text">
+                <span class="admin_search_icon"><i class="fas fa-search fa-sm"></i></span>
+            </div>
+            <span class="admin_notification_icon"><i class="fas fa-bell fa-fw"></i></span>
+            <span class="admin_message_icon"><i class="fas fa-envelope-open"></i></span>
+            <span class="admin_logo_icon"><i class="fas fa-user-md"></i></span>
+        </header>
+        <div class="mainContent">
+
+            <p class="welcome_text">WELCOME Faiq Alizade</p>
+            <div class="page_bar">
+                <a>HOME</a>
+                <a>ABOUT</a>
+                <a>SALE</a>
+                <a>+</a>
+            </div>
+            <div class="dashboardWrapper">
+                <div class="dashboardRow">
+                    <div class="dashboardRowCol">
+                        <%
+                        var x = 0
+                        while(x < 2){
+                        %>
+                        <div class="dashboardRequests dashboardWidget">
+                            <div class="dashboardWidgetWrapper">
+                                <div class="dashboardWidgetHeader">
+                                    <div class="dashBoardWidgetHeaderTitle">
+                                        Requests
+                                    </div>
+                                </div>
+                                <div class="dashboardWidgetContent">
+                                    <div class="dashboardTable">
+                                        <div class="dashboardTableHeader">
+                                            <div class="dashboardTableHeaderItem">
+                                                User
+                                            </div>
+                                            <div class="dashboardTableHeaderItem">
+                                                Date
+                                            </div>
+                                            <div class="dashboardTableHeaderItem">
+                                                Status
+                                            </div>
+                                        </div>
+                                        <div class="dashboardTableContent">
+                                            
+                                            <%
+                                            var i = 0
+                                            while(i < 5){ 
+                                                i++
+                                            %>
+                                                <div class="dashboardTableContentItemWrapper">
+                                                    <div class="dashboardTableContentItem">
+                                                        Faiq Alizade
+                                                    </div>
+                                                    <div class="dashboardTableContentItem">
+                                                        25.12.2019
+                                                    </div>
+                                                    <div class="dashboardTableContentItem">
+                                                        DO
+                                                    </div>                                            
+                                                </div>
+                                            <% } %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dashboardWidgetFooter">
+                                Footer
+                            </div>
+                        </div>
+                        <% x++ } %>
+                    </div>
+
+                    <div class="dashboardRowCol">
+                        <div class="dashboardWidget">
+                            <div class="dashboardWidgetWrapper">
+                                <div class="dashboardWidgetHeader">
+                                    <div class="dashBoardWidgetHeaderTitle">
+                                        Orders
+                                    </div>
+                                </div>
+                                <div class="dashboardWidgetContent">
+                                    <div class="dashboardTable">
+                                        <div class="dashboardTableHeader">
+                                            <div class="dashboardTableHeaderItem dashboardTableHeaderItem__orderNumber">
+                                                #
+                                            </div>
+                                            <div class="dashboardTableHeaderItem">
+                                                User
+                                            </div>
+                                            <div class="dashboardTableHeaderItem">
+                                                Date
+                                            </div>
+                                            <div class="dashboardTableHeaderItem">
+                                                Price
+                                                <span class="priceCurrencySymbol">
+                                                    <img src="images/azn.png">
+                                                </span>
+                                            </div>
+                                            <div class="dashboardTableHeaderItem ">
+                                                Payment method
+                                            </div>
+                                            <div class="dashboardTableHeaderItem">
+                                                Actions
+                                            </div>
+                                        </div>
+                                        <div class="dashboardTableContent">
+                                            
+                                            <%
+                                            var i = 0
+                                            while(i < 5){ 
+                                                i++
+                                            %>
+                                                <div class="dashboardTableContentItemWrapper">
+                                                    <div class="dashboardTableContentItem dashboardTableContentItem__orderNumber">
+                                                        <%= i %>
+                                                    </div>
+                                                    <div class="dashboardTableContentItem">
+                                                        Faiq Alizade
+                                                    </div>
+                                                    <div class="dashboardTableContentItem">
+                                                        25.12.2019
+                                                    </div>
+                                                    <div class="dashboardTableContentItem">
+                                                        120
+                                                    </div>
+                                                    <div class="dashboardTableContentItem   dashboardTableContentItem__payMethodCash">
+                                                        <i class="fas fa-money-bill-wave"></i>
+                                                        <!-- <i class="fas fa-credit-card"></i> -->
+                                                    </div>
+                                                    <div class="dashboardTableContentItem">
+                                                        <span class="orderAction orderAction__detail">
+                                                            <i class="fas fa-info"></i>
+                                                        </span>
+                                                        <span class="orderAction orderAction__check">
+                                                            <i class="far fa-check"></i>
+                                                        </span>
+                                                        <span class="orderAction orderAction__remove">
+                                                            <i class="fas fa-trash-alt"></i>
+                                                        </span>
+                                                    </div>                                            
+                                                </div>
+                                            <% } %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dashboardWidgetFooter">
+                                Footer
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $('.page_bar').hide(0);
+    var i = 0;
+
+    function page_click(name) {
+        if (i == 0) {
+            $('.' + name + '_bar').fadeIn(500);
             i = 1;
-        }else{
+        } else {
             $('.page_bar').fadeOut(300);
             i = 0;
         }
-        
-     }
-     function content_click(name) {
-        if(i==1){
-            $('.'+name+'_bar').fadeOut(300);
+
+    }
+
+    function content_click(name) {
+        if (i == 1) {
+            $('.' + name + '_bar').fadeOut(300);
             i = 0;
         }
-        
-     }
-     
-    </script>
-</div>
+
+    }
+</script>

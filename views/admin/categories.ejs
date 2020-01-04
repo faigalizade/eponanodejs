@@ -1,0 +1,120 @@
+<%- include('head.ejs') %>
+
+<div class="adminWrapper">
+    <%- include('sidebar.ejs') %>
+    <div class="adminCol adminContent">
+        <header>
+            <div class="admin_search">
+                <input class="search_input" placeholder="Search ..." type="text">
+                <span class="admin_search_icon"><i class="fas fa-search fa-sm"></i></span>
+            </div>
+            <span class="admin_notification_icon"><i class="fas fa-bell fa-fw"></i></span>
+            <span class="admin_message_icon"><i class="fas fa-envelope-open"></i></span>
+            <span class="admin_logo_icon"><i class="fas fa-user-md"></i></span>
+        </header>
+        <div class="mainContent">
+            <div class="dashboardWrapper">
+                <div class="dashboardRow">
+
+                    <div class="dashboardRowCol">
+                        <div class="dashboardWidget">
+                            <div class="dashboardWidgetWrapper">
+                                <div class="dashboardWidgetHeader">
+                                    <div class="dashBoardWidgetHeaderTitle">
+                                        Add new
+                                    </div>
+                                </div>
+                                <div class="dashboardWidgetContent">
+                                    <form enctype="multipart/form-data" method="post" class="categoryAddForm" >
+                                        <p>Name</p>
+                                        <input type="text" required name="categoryName">
+                                        <p>Select parent category</p>
+                                        <select name="categoryMain" id="categoryMain">
+                                            <option disabled selected value> -- select an option -- </option>
+                                            <option value="Men">Men</option>
+                                            <option value="Women">Women</option>
+                                        </select>
+                                        <p>Image</p>
+                                        <input required type="file" name="categoryImg" id='categoryImgInput'>
+                                        <label for="categoryImgInput" class="uploadBtn">
+                                            <i class="fas fa-upload"></i> 
+                                            Upload
+                                        </label>
+                                        <p>Description</p>
+                                        <textarea name="categoryDesc" rows="10" ></textarea>
+                                        <input type="submit" id='categoryNewSbmt' name="categoryNewSbmt">
+                                        <label for="categoryNewSbmt" class="primaryBtn" >
+                                            Add
+                                        </label>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboardRowCol">
+                        <div class="dashboardWidget">
+                            <div class="dashboardWidgetWrapper">
+                                <div class="dashboardWidgetHeader">
+                                    <div class="dashBoardWidgetHeaderTitle">
+                                        Categories
+                                    </div>
+                                </div>
+                                <div class="dashboardWidgetContent">
+                                    <div class="dashboardTable">
+                                        <div class="dashboardTableHeader">
+                                            <div class="dashboardTableHeaderItem dashboardTableHeaderItem__orderNumber">
+                                                #
+                                            </div>
+                                            <div class="dashboardTableHeaderItem">
+                                                Name
+                                            </div>
+                                            <div class="dashboardTableHeaderItem">
+                                                Image
+                                            </div>
+                                            <div class="dashboardTableHeaderItem">
+                                                Description
+                                            </div>
+                                            <div class="dashboardTableHeaderItem">
+                                                Records
+                                            </div>
+                                            <div class="dashboardTableHeaderItem">
+                                                Actions
+                                            </div>
+                                        </div>
+                                        <div class="dashboardTableContent">
+                                            <% for(var i=0; i < categories.length; i++) { %>
+                                                <div class="dashboardTableContentItemWrapper">
+                                                <div class="dashboardTableContentItem dashboardTableContentItem__orderNumber">
+                                                    <%= i+1 %>
+                                                </div>
+                                                <div class="dashboardTableContentItem">
+                                                    <%= categories[i].name %>
+                                                </div>
+                                                <div class="dashboardTableContentItem">
+                                                    <div class="categoriesTableImageWrapper">
+                                                        <img src="/uploads/<%= categories[i].img %>" alt="" class="categoriesTableImage">
+                                                    </div>
+                                                </div>
+                                                <div class="dashboardTableContentItem">
+                                                    <%= categories[i].description %>
+                                                </div>
+                                                <div class="dashboardTableContentItem">
+                                                    <%= categories[i].records %>
+                                                </div>
+                                                <div class="dashboardTableContentItem">
+                                                    <i class="fas fa-pen"></i>
+                                                    <i class="fas fa-trash-alt"></i>
+                                                </div>
+                                            </div>    
+                                            <% } %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

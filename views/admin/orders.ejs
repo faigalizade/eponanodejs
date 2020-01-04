@@ -1,0 +1,206 @@
+<%- include('head.ejs') %>
+
+<div class="adminWrapper">
+    <%- include('sidebar.ejs') %>
+    <div class="adminCol adminContent">
+        <header>
+            <div class="admin_search">
+                <input class="search_input" placeholder="Search ..." type="text">
+                <span class="admin_search_icon"><i class="fas fa-search fa-sm"></i></span>
+            </div>
+            <span class="admin_notification_icon"><i class="fas fa-bell fa-fw"></i></span>
+            <span class="admin_message_icon"><i class="fas fa-envelope-open"></i></span>
+            <span class="admin_logo_icon"><i class="fas fa-user-md"></i></span>
+        </header>
+        <div class="mainContent">
+            <div class="dashboardWrapper">
+                <div class="dashboardRow">
+                    <div class="dashboardWidget">
+                        <div class="dashboardWidgetWrapper">
+                            <div class="dashboardWidgetHeader">
+                                <div class="dashBoardWidgetHeaderTitle">
+                                    Orders
+                                </div>
+                            </div>
+                            <div class="dashboardWidgetContent">
+                                <!-- <div class="dashboardWidgetChartWrapper">
+                                    <canvas id="orderChart" height="80"></canvas>
+                                </div> -->
+                                <div class="dashboardTable">
+                                    <div class="dashboardTableHeader">
+                                        <div class="dashboardTableHeaderItem dashboardTableHeaderItem__orderNumber">
+                                            #
+                                        </div>
+                                        <div class="dashboardTableHeaderItem">
+                                            User
+                                        </div>
+                                        <div class="dashboardTableHeaderItem">
+                                            Date
+                                        </div>
+                                        <div class="dashboardTableHeaderItem">
+                                            Price
+                                            <span class="priceCurrencySymbol">
+                                                <img src="/images/azn.png">
+                                            </span>
+                                        </div>
+                                        <div class="dashboardTableHeaderItem ">
+                                            Payment method
+                                        </div>
+                                        <div class="dashboardTableHeaderItem">
+                                            Actions
+                                        </div>
+                                    </div>
+                                    <div class="dashboardTableContent">
+                                        
+                                        <%
+                                        var i = 0
+                                        while(i < 10){ 
+                                            i++
+                                        %>
+                                            <div class="dashboardTableContentItemWrapper">
+                                                <div class="dashboardTableContentItem dashboardTableContentItem__orderNumber">
+                                                    <%= i %>
+                                                </div>
+                                                <div class="dashboardTableContentItem">
+                                                    Faiq Alizade
+                                                </div>
+                                                <div class="dashboardTableContentItem">
+                                                    25.12.2019
+                                                </div>
+                                                <div class="dashboardTableContentItem">
+                                                    120
+                                                </div>
+                                                <div class="dashboardTableContentItem   dashboardTableContentItem__payMethodCash">
+                                                    <i class="fas fa-money-bill-wave"></i>
+                                                    <!-- <i class="fas fa-credit-card"></i> -->
+                                                </div>
+                                                <div class="dashboardTableContentItem">
+                                                    <span class="orderAction orderAction__detail">
+                                                        <i class="fas fa-info"></i>
+                                                    </span>
+                                                    <span class="orderAction orderAction__check">
+                                                        <i class="far fa-check"></i>
+                                                    </span>
+                                                    <span class="orderAction orderAction__remove">
+                                                        <i class="fas fa-trash-alt"></i>
+                                                    </span>
+                                                </div>                                            
+                                            </div>
+                                        <% } %>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dashboardWidgetFooter">
+                                <div class="paginationWrapper">
+                                    <div class="paginationItem">
+                                        <a href="#">1</a>
+                                    </div>
+                                    <div class="paginationItem">
+                                        <a href="#">2</a>
+                                    </div>
+                                    <div class="paginationItem">
+                                        <a href="#">3</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- REQUESTS -->
+                <div class="dashboardRow">
+                    <div class="dashboardWidget">
+                        <div class="dashboardWidgetWrapper">
+                            <div class="dashboardWidgetHeader">
+                                <div class="dashBoardWidgetHeaderTitle">
+                                    Requests
+                                </div>
+                            </div>
+                            <div class="dashboardWidgetContent">
+                                <!-- <div class="dashboardWidgetChartWrapper">
+                                    <canvas id="orderChart" height="80"></canvas>
+                                </div> -->
+                                <div class="dashboardTable">
+                                    <div class="dashboardTableHeader">
+                                        <div class="dashboardTableHeaderItem dashboardTableHeaderItem__orderNumber">
+                                            #
+                                        </div>
+                                        <div class="dashboardTableHeaderItem">
+                                            User
+                                        </div>
+                                        <div class="dashboardTableHeaderItem">
+                                            Date
+                                        </div>
+                                        <div class="dashboardTableHeaderItem">
+                                            Price
+                                            <span class="priceCurrencySymbol">
+                                                <img src="/images/azn.png">
+                                            </span>
+                                        </div>
+                                        <div class="dashboardTableHeaderItem ">
+                                            Payment method
+                                        </div>
+                                        <div class="dashboardTableHeaderItem">
+                                            Actions
+                                        </div>
+                                    </div>
+                                    <div class="dashboardTableContent">
+                                        
+                                        <%
+                                        var i = 0
+                                        while(i < 10){ 
+                                            i++
+                                        %>
+                                            <div class="dashboardTableContentItemWrapper">
+                                                <div class="dashboardTableContentItem dashboardTableContentItem__orderNumber">
+                                                    <%= i %>
+                                                </div>
+                                                <div class="dashboardTableContentItem">
+                                                    Faiq Alizade
+                                                </div>
+                                                <div class="dashboardTableContentItem">
+                                                    25.12.2019
+                                                </div>
+                                                <div class="dashboardTableContentItem">
+                                                    120
+                                                </div>
+                                                <div class="dashboardTableContentItem   dashboardTableContentItem__payMethodCash">
+                                                    <i class="fas fa-money-bill-wave"></i>
+                                                    <!-- <i class="fas fa-credit-card"></i> -->
+                                                </div>
+                                                <div class="dashboardTableContentItem">
+                                                    <span class="orderAction orderAction__detail">
+                                                        <i class="fas fa-info"></i>
+                                                    </span>
+                                                    <span class="orderAction orderAction__check">
+                                                        <i class="far fa-check"></i>
+                                                    </span>
+                                                    <span class="orderAction orderAction__remove">
+                                                        <i class="fas fa-trash-alt"></i>
+                                                    </span>
+                                                </div>                                            
+                                            </div>
+                                        <% } %>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dashboardWidgetFooter">
+                                <div class="paginationWrapper">
+                                    <div class="paginationItem">
+                                        <a href="#">1</a>
+                                    </div>
+                                    <div class="paginationItem">
+                                        <a href="#">2</a>
+                                    </div>
+                                    <div class="paginationItem">
+                                        <a href="#">3</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

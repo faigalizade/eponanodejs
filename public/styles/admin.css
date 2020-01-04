@@ -14,7 +14,9 @@ body {
     overflow: hidden;
 }
 
-input {
+input,
+select,
+textarea {
     outline: none;
 }
 
@@ -81,17 +83,47 @@ header {
     margin-top: 20px;
 }
 
-.sidebarMenuItem {
+.sidebarMenuItemAnchor{
     display: flex;
     flex-direction: column;
     align-items: center;
     font-size: 30px;
     color: #fff;
-    padding: 20px 0;
     transition: background .4s;
+    padding: 20px 0;
+}
+.sidebarMenuItem{
+    position: relative;
+}
+.sidebarDropdownMenu{
+    position: absolute;
+    left: 100px;
+    top: -9999px;
+    color: #fff;
+    background-color: #3f72af;
+    z-index: 2;
+    transition: opacity .5s;
+    opacity: 0;
+    width: 150px;
+}
+.sidebarDropdownMenuItem{
+    display: block;
+    padding: 10px 20px;
+    text-align: center;
+}
+#orderChart{
+    margin-top: 20px;
 }
 
-.sidebarMenuItem:hover {
+.sidebarMenuItem:hover > .sidebarDropdownMenu{
+    top: 0;
+    opacity: 1;
+}
+
+.sidebarDropdownMenuItem{
+    color: #fff;
+}
+.sidebarMenuItem a:hover {
     background-color: #3a69a1;
 }
 
@@ -264,6 +296,8 @@ header {
 }
 
 .dashboardWidgetFooter {
+    display: flex;
+    justify-content: flex-end;
     padding: 10px 15px;
 }
 
@@ -298,6 +332,9 @@ header {
 .dashboardTableContentItem {
     flex: 1;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .priceCurrencySymbol {
@@ -315,7 +352,7 @@ header {
 }
 .dashboardTableHeaderItem__orderNumber,
 .dashboardTableContentItem__orderNumber{
-    flex: none;
+    flex: .1;
     margin-right: 10px;
     justify-content: center;
 }
@@ -331,4 +368,68 @@ header {
 }
 .orderAction__check{
     color: #46C855;
+}
+.paginationWrapper{
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin: 10px 0;
+}
+.paginationItem a{
+    padding: 5px 10px;
+    border: 1px solid #ecebeb;
+    color: #112d4e;
+    background-color: #f9f7f7;
+    border-right: none;
+}
+.paginationItem:last-child a{
+    border-right: 1px solid #ecebeb;
+    border-radius: 0 2px 2px 0;
+}
+.paginationItem:first-child a{
+    border-radius: 2px 0 0 2px;
+}
+.categoriesTableImage{
+    width: 50px;
+}
+.primaryBtn{
+    display: block;
+    background-color: #3f72af;
+    color: #fff;
+    padding: 5px 20px;
+    cursor: pointer;
+    font-size: 13px;
+    margin: 10px 0;
+    float: right;
+    text-align: center;
+
+}
+.categoryAddForm p{
+    padding: 5px 0;
+    width: 100%;
+    float: left;
+}
+#categoryImgInput,
+#categoryNewSbmt{
+    display: none;
+}
+
+.uploadBtn{
+    display: block;
+    padding: 5px 20px;
+    background-color: #f9f7f7;
+    border: 1px solid #ecebeb;
+    text-align: center;
+    float: left;
+    cursor: pointer;
+}
+.categoryAddForm input,
+textarea{
+    font-size: 15px;
+    width: calc(100% - 10px);
+    padding: 5px 5px;
+}
+option{
+    padding: 5px 0;
+    font-size: 15px;
 }

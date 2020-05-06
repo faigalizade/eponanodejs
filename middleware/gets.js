@@ -69,13 +69,6 @@ module.exports = function (app, passport) {
 
     app.get('/admin/categories', async (req, res) => {
         categoryMap = await Categories.find({})
-        // function createTree(arr){
-        //     for(let i in arr){
-        //         console.log(arr[i])
-        //     }
-        // }
-        // await createTree(categoryMap)
-
         function createTree(arr) {
             var tree = [],
             mappedArr = {},
@@ -106,9 +99,9 @@ module.exports = function (app, passport) {
             return tree
         }
         tree = createTree(categoryMap)
-        console.log(JSON.stringify(tree))
+
         res.render('admin/categories', {
-            categories: categoryMap
+            categories: JSON.stringify(tree)
         })
     })
 }

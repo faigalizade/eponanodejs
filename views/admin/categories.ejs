@@ -82,32 +82,33 @@
                                                 Actions
                                             </div>
                                         </div>
+                                        <span id="JSONcategories" style="display: none;">
+                                            <%=categories%>
+                                        </span>
                                         <div class="dashboardTableContent">
-                                            <% for(var i=0; i < categories.length; i++) { %>
                                                 <div class="dashboardTableContentItemWrapper">
                                                 <div class="dashboardTableContentItem dashboardTableContentItem__orderNumber">
-                                                    <%= i+1 %>
+                                                    1
                                                 </div>
                                                 <div class="dashboardTableContentItem">
-                                                    <%= categories[i].name %>
+                                                    Men
                                                 </div>
                                                 <div class="dashboardTableContentItem">
                                                     <div class="categoriesTableImageWrapper">
-                                                        <img src="/uploads/<%= categories[i].img %>" alt="" class="categoriesTableImage">
+                                                        <img src="/uploads/AyFcN4IPd8.jpg" alt="" class="categoriesTableImage">
                                                     </div>
                                                 </div>
                                                 <div class="dashboardTableContentItem">
-                                                    <%= categories[i].description %>
+                                                    -
                                                 </div>
                                                 <div class="dashboardTableContentItem">
-                                                    <%= categories[i].records %>
+                                                    0
                                                 </div>
                                                 <div class="dashboardTableContentItem">
                                                     <i class="fas fa-pen"></i>
                                                     <i class="fas fa-trash-alt"></i>
                                                 </div>
                                             </div>    
-                                            <% } %>
                                         </div>
                                     </div>
                                 </div>
